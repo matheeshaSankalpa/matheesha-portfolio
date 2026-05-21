@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { personal } from '../data/content'
 
-const roles = ['MERN Stack Developer', 'Software Engineer', 'Tech + Business', 'Problem Solver']
+const roles = ['Marketer', 'Developer', 'Tech + Business', 'Problem Solver']
 
 export default function Hero() {
   const [text, setText] = useState('')
