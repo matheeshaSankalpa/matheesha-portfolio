@@ -50,7 +50,7 @@ export default function Footer() {
             </Link>
 
             <p className="max-w-[420px] text-[15px] leading-[1.85] text-white/58">
-              Digital marketer with a data science direction, building creative and data-driven digital experiences.
+              Digital marketer with a data science direction, building creative and data driven digital experiences.
             </p>
           </div>
 

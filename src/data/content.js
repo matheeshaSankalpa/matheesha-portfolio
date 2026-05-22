@@ -1,7 +1,7 @@
 export const personal = {
   name: "Matheesha Sankalpa",
   role: "MERN Stack Developer",
-  bio: "Dual-degree student in Software Engineering & BBA Management. I build full-stack apps and think in systems.",
+  bio: "Marketing & Data Science student who builds things and thinks in systems.",
   email: "smatheesha76@gmail.com",
   phone: "+94 724105054",
   whatsapp: "https://wa.me/94724105054",

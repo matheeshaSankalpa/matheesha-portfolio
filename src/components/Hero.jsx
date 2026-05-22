@@ -230,7 +230,6 @@ export default function Hero() {
             {personal.bio}
           </p>
 
-
           <div className="flex justify-center gap-5">
             {socials.map(s => (
               <a
@@ -261,7 +260,7 @@ export default function Hero() {
                 className="max-w-[760px] text-[42px] font-black leading-[0.98] text-white md:text-[72px]"
                 style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
               >
-                Digital marketing mind. Data science direction.
+                Digital Marketing mind. Data Science Direction.
               </h2>
             </div>
 
@@ -337,7 +336,7 @@ export default function Hero() {
               </span>
               <h3 className="mb-4 text-2xl font-bold text-white">Who I am</h3>
               <p className="text-[15px] leading-[1.8] text-white/65">
-                A marketing-focused undergraduate building a path across digital marketing, analytics, creative tools, and data science.
+                A marketing focused undergraduate building a path across digital marketing, analytics, creative tools, and data science.
               </p>
             </div>
 
@@ -373,12 +372,12 @@ export default function Hero() {
                   className="max-w-[720px] text-[38px] font-black leading-[0.98] text-white md:text-[64px]"
                   style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
                 >
-                  Let’s connect across the digital space.
+                  Let’s Connect across the Digital Space.
                 </h2>
               </div>
 
               <p className="max-w-[360px] text-[15px] leading-[1.85] text-white/62 md:text-[16px]">
-                Follow my journey in digital marketing, data science, creative content, and personal branding.
+                Follow my journey in Digital Marketing, Data Science, Creative content, and Personal branding.
               </p>
             </div>
 
