@@ -91,7 +91,7 @@ export default function Videos() {
               className="max-w-[820px] text-[44px] font-black leading-[0.96] text-white md:text-[82px]"
               style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
             >
-              Short videos, sharp ideas, and digital stories.
+              Short videos, Sharp Ideas, and Digital Stories.
             </h1>
 
             <p className="mt-6 max-w-[650px] text-[16px] leading-[1.85] text-white/62">

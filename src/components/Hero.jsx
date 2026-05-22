@@ -260,7 +260,7 @@ export default function Hero() {
                 className="max-w-[760px] text-[42px] font-black leading-[0.98] text-white md:text-[72px]"
                 style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
               >
-                Digital Marketing mind. Data Science Direction.
+                Digital Marketing Mind. Data Science Direction.
               </h2>
             </div>
 

@@ -133,7 +133,7 @@ export default function Work() {
             className="max-w-[860px] text-[44px] font-black leading-[0.96] text-white md:text-[82px]"
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
           >
-            Experience through brands, clubs, and creative projects.
+            Experience through Brands, Clubs, and Creative Projects.
           </h1>
 
           <p className="mt-6 max-w-[680px] text-[16px] leading-[1.85] text-white/62">

@@ -13,13 +13,13 @@ const academicItems = [
     title: 'SITC Campus',
     subtitle: 'Diploma in Cyber Security',
     description:
-      'Completed a Cyber Security diploma and gained foundational knowledge in digital security and technology.',
+      'Completed a Cyber Security Diploma and gained foundational knowledge in Digital Security and Technology.',
   },
   {
     period: 'April 2024 - Present',
     logo: 'https://www.google.com/s2/favicons?domain=cardiffmet.ac.uk&sz=128',
     title: 'Cardiff Metropolitan University',
-    subtitle: 'BSc in Computer Software Engineering',
+    subtitle: 'HD in Computer Software Engineering',
     description:
       'Started software engineering studies, building technical knowledge in programming, web development, and software concepts.',
   },
@@ -29,7 +29,7 @@ const academicItems = [
     title: 'University of Ruhuna',
     subtitle: 'Bachelor of Business Administration - BBA',
     description:
-      'Following Business Administration and Management studies with a focus on marketing, business strategy, and digital growth.',
+      'Following Business Administration and Management studies with a focus on Marketing, Business strategy, and Digital growth.',
   },
 ]
 

@@ -248,7 +248,7 @@ export default function Skills() {
             className="max-w-[880px] text-[44px] font-black leading-[0.96] text-white md:text-[82px]"
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
           >
-            Skills built around marketing, data, creativity, and tech.
+            Skills built around Digital Marketing, Data, Creativity, and Tech.
           </h1>
 
           <p className="mt-6 max-w-[700px] text-[16px] leading-[1.85] text-white/62">
