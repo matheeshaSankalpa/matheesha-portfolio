@@ -154,7 +154,7 @@ export default function Hero() {
           </p>
 
           <a
-            href="#contact"
+            href="./contact"
             className="inline-flex items-center gap-5 rounded-full px-8 py-4 text-[16px] font-bold text-[#071000] transition-all duration-300 hover:-translate-y-1"
             style={{ background: '#4DDCFF', boxShadow: '0 18px 45px rgba(156,255,0,0.24)', textDecoration: 'none' }}
           >
