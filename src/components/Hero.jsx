@@ -229,31 +229,6 @@ export default function Hero() {
           <p className="mx-auto mb-6 max-w-[340px] text-[16px] leading-[1.75] text-white/82">
             {personal.bio}
           </p>
-
-          <a
-            href="#contact"
-            className="mx-auto mb-7 inline-flex items-center gap-4 rounded-full px-8 py-4 text-[17px] font-bold text-[#071000]"
-            style={{ background: '#4DDCFF', boxShadow: '0 18px 45px rgba(77,220,255,0.22)', textDecoration: 'none' }}
-          >
-            Let's Talk
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-xl text-[#071000]">↗</span>
-          </a>
-
-          <div className="flex justify-center gap-5">
-            {socials.map(s => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={s.label}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#4DDCFF]/35 text-[#4DDCFF]"
-                style={{ boxShadow: '0 0 28px rgba(77,220,255,0.12)' }}
-              >
-                {s.svg}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
 
