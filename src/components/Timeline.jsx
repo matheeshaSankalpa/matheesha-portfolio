@@ -31,6 +31,14 @@ const academicItems = [
     description:
       'Following Business Administration and Management studies with a focus on Marketing, Business strategy, and Digital growth.',
   },
+  {
+  period: 'Present',
+  logo: 'https://www.google.com/s2/favicons?domain=cardiffmet.ac.uk&sz=128',
+  title: 'Cardiff Metropolitan University',
+  subtitle: 'BSc (Hons) in Data Science - Top Up',
+  description:
+    'Following a Top-Up degree in Data Science, focusing on data analytics, machine learning, business intelligence, and modern data-driven technologies.',
+},
 ]
 
 const certificateItems = [
