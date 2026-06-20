@@ -3,10 +3,11 @@ import { useState } from 'react'
 const categories = ['All', 'Marketing', 'Books', 'Coding']
 
 const blogs = [
-    {
+  {
     category: 'Marketing',
     title: 'වර්ණවල රහස් භාෂාව',
-    subtitle: 'පාරිභෝගිකයාගේ හිත පාලනය කිරීමට වර්ණ විද්‍යාව (Color Psychology) උපයෝගී කරගන්නේ කෙසේද?',
+    subtitle:
+      'පාරිභෝගිකයාගේ හිත පාලනය කිරීමට වර්ණ විද්‍යාව (Color Psychology) උපයෝගී කරගන්නේ කෙසේද?',
     image: '/blog/color.jpg',
     url: 'https://medium.com/@smatheesha76/ඔබේ-බ්-රෑන්ඩ්-එකේ-වර්ණය-පිටුපස-ඇති-මනෝවිද්-යාව-පාරිභෝගිකයා-තීරණ-ගන්නේ-කෙසේද-f5ac7b1d1c41',
   },
@@ -169,7 +170,8 @@ export default function Blogs() {
             </h1>
 
             <p className="mt-6 max-w-[680px] text-[16px] leading-[1.85] text-white/62">
-              A curated collection of my Medium articles about digital marketing, psychology, personal growth, and programming.
+              A curated collection of my Medium articles about digital
+              marketing, psychology, personal growth, and programming.
             </p>
           </div>
 
@@ -261,9 +263,11 @@ export default function Blogs() {
                   <img
                     src={blog.image}
                     alt={blog.title}
+                    loading="lazy"
                     className="relative z-10 aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     onError={event => {
-                      event.currentTarget.style.display = 'none'
+                      console.log('Image failed:', blog.image)
+                      event.currentTarget.style.border = '2px solid red'
                     }}
                   />
                 </a>
