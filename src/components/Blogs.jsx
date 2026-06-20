@@ -3,6 +3,13 @@ import { useState } from 'react'
 const categories = ['All', 'Marketing', 'Books', 'Coding']
 
 const blogs = [
+    {
+    category: 'Marketing',
+    title: 'වර්ණවල රහස් භාෂාව',
+    subtitle: 'පාරිභෝගිකයාගේ හිත පාලනය කිරීමට වර්ණ විද්‍යාව (Color Psychology) උපයෝගී කරගන්නේ කෙසේද?',
+    image: '/blog/color.jpg',
+    url: 'https://medium.com/@smatheesha76/ඔබේ-බ්-රෑන්ඩ්-එකේ-වර්ණය-පිටුපස-ඇති-මනෝවිද්-යාව-පාරිභෝගිකයා-තීරණ-ගන්නේ-කෙසේද-f5ac7b1d1c41',
+  },
   {
     category: 'Marketing',
     title: 'Red Bull හි රුපියල් බිලියන ගණනක ව්‍යාපාරික රහස',
