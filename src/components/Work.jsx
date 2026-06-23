@@ -27,7 +27,7 @@ const workItems = [
     category: 'University Clubs',
     logo: '/logos/leo.png',
     title: 'Leo Club',
-    role: 'Editor - Safeguard Project',
+    role: 'Editor - Safeguard Project (2026)',
     period: 'University Club Project',
     description:
       'I worked as an editor for the Safeguard project, which focused on awareness about accidents and safety-related education.',
@@ -39,7 +39,7 @@ const workItems = [
     category: 'University Clubs',
     logo: '/logos/zeroplastic.png',
     title: 'Zero Plastic',
-    role: 'Graphic Designer - Thirasara Dakma',
+    role: 'Graphic Designer - Thirasara Dakma(2025)',
     period: 'University Sustainability Project',
     description:
       'I worked as a graphic designer and created several designs for sustainability-focused awareness activities.',

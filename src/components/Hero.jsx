@@ -144,24 +144,31 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="absolute right-[5vw] top-[61%] z-30 w-[min(27vw,470px)] -translate-y-1/2 rounded-[24px] border border-white/15 bg-white/[0.04] px-10 py-10 backdrop-blur-md">
-          <div className="mb-7 text-[26px] font-bold leading-tight text-white lg:text-[30px]">
-            {text}<span className="text-[#4DDCFF]">|</span>
-          </div>
+     <div className="absolute right-[5vw] top-[61%] z-30 w-[min(27vw,470px)] -translate-y-1/2 rounded-[24px] border border-white/15 bg-white/[0.04] px-10 py-10 backdrop-blur-md">
+  <div className="mb-7 text-[26px] font-bold leading-tight text-white lg:text-[30px]">
+    {text}<span className="text-[#4DDCFF]">|</span>
+  </div>
 
-          <p className="mb-9 text-[16px] leading-[1.85] text-white/78 lg:text-[18px]">
-            Merging software engineering with business thinking to build things that don't just look great — they perform effortlessly.
-          </p>
+  <p className="mb-9 text-[16px] leading-[1.85] text-white/78 lg:text-[18px]">
+    Merging software engineering with business thinking to build things that don't just look great — they perform effortlessly.
+  </p>
 
-          <a
-            href="./contact"
-            className="inline-flex items-center gap-5 rounded-full px-8 py-4 text-[16px] font-bold text-[#071000] transition-all duration-300 hover:-translate-y-1"
-            style={{ background: '#4DDCFF', boxShadow: '0 18px 45px rgba(156,255,0,0.24)', textDecoration: 'none' }}
-          >
-            Let's Talk
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-lg text-[#071000]">↗</span>
-          </a>
-        </div>
+  <a
+    href="./Work"
+    aria-label="View Work Experience"
+    className="inline-flex items-center gap-5 rounded-full px-8 py-4 text-[16px] font-bold text-[#071000] transition-all duration-300 hover:-translate-y-1"
+    style={{
+      background: '#4DDCFF',
+      boxShadow: '0 18px 45px rgba(156,255,0,0.24)',
+      textDecoration: 'none',
+    }}
+  >
+    Work Experience
+    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-lg text-[#071000]">
+      ↗
+    </span>
+  </a>
+</div>
 
         <div className="pointer-events-none absolute bottom-0 left-1/2 z-20 w-[min(43vw,720px)] -translate-x-1/2">
           <img
