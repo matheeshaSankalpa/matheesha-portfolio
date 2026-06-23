@@ -30,6 +30,8 @@ export default function Hero() {
     setTyping(true)
   }, [text, typing, rIndex])
 
+  // Social icons are still used in desktop view only.
+  // Mobile view does not render these icons anymore.
   const socials = [
     {
       href: personal.linkedin,
@@ -87,7 +89,8 @@ export default function Hero() {
             'linear-gradient(rgba(77,220,255,0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(77,220,255,0.20) 1px, transparent 1px)',
           backgroundSize: '68px 68px',
           maskImage: 'radial-gradient(ellipse at center, black 0%, rgba(0,0,0,0.85) 42%, rgba(0,0,0,0.45) 62%, transparent 82%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at center, black 0%, rgba(0,0,0,0.85) 42%, rgba(0,0,0,0.45) 62%, transparent 82%)',
+          WebkitMaskImage:
+            'radial-gradient(ellipse at center, black 0%, rgba(0,0,0,0.85) 42%, rgba(0,0,0,0.45) 62%, transparent 82%)',
         }}
       />
 
@@ -104,7 +107,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Desktop */}
+      {/* Desktop view - unchanged */}
       <div className="relative hidden min-h-[100svh] md:block">
         <div className="pointer-events-none absolute left-0 right-0 top-[18%] z-10 select-none text-center">
           <h1
@@ -127,6 +130,7 @@ export default function Hero() {
             {personal.bio}
           </p>
 
+          {/* Desktop social icons only */}
           <div className="mt-9 flex items-center gap-5">
             {socials.map(s => (
               <a
@@ -144,31 +148,32 @@ export default function Hero() {
           </div>
         </div>
 
-     <div className="absolute right-[5vw] top-[61%] z-30 w-[min(27vw,470px)] -translate-y-1/2 rounded-[24px] border border-white/15 bg-white/[0.04] px-10 py-10 backdrop-blur-md">
-  <div className="mb-7 text-[26px] font-bold leading-tight text-white lg:text-[30px]">
-    {text}<span className="text-[#4DDCFF]">|</span>
-  </div>
+        <div className="absolute right-[5vw] top-[61%] z-30 w-[min(27vw,470px)] -translate-y-1/2 rounded-[24px] border border-white/15 bg-white/[0.04] px-10 py-10 backdrop-blur-md">
+          <div className="mb-7 text-[26px] font-bold leading-tight text-white lg:text-[30px]">
+            {text}<span className="text-[#4DDCFF]">|</span>
+          </div>
 
-  <p className="mb-9 text-[16px] leading-[1.85] text-white/78 lg:text-[18px]">
-    Merging software engineering with business thinking to build things that don't just look great — they perform effortlessly.
-  </p>
+          <p className="mb-9 text-[16px] leading-[1.85] text-white/78 lg:text-[18px]">
+            Merging software engineering with business thinking to build things that don't just look great — they perform effortlessly.
+          </p>
 
-  <a
-    href="./Work"
-    aria-label="View Work Experience"
-    className="inline-flex items-center gap-5 rounded-full px-8 py-4 text-[16px] font-bold text-[#071000] transition-all duration-300 hover:-translate-y-1"
-    style={{
-      background: '#4DDCFF',
-      boxShadow: '0 18px 45px rgba(156,255,0,0.24)',
-      textDecoration: 'none',
-    }}
-  >
-    Work Experience
-    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-lg text-[#071000]">
-      ↗
-    </span>
-  </a>
-</div>
+          {/* Desktop Work Experience button - unchanged */}
+          <a
+            href="./Work"
+            aria-label="View Work Experience"
+            className="inline-flex items-center gap-5 rounded-full px-8 py-4 text-[16px] font-bold text-[#071000] transition-all duration-300 hover:-translate-y-1"
+            style={{
+              background: '#4DDCFF',
+              boxShadow: '0 18px 45px rgba(156,255,0,0.24)',
+              textDecoration: 'none',
+            }}
+          >
+            Work Experience
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-lg text-[#071000]">
+              ↗
+            </span>
+          </a>
+        </div>
 
         <div className="pointer-events-none absolute bottom-0 left-1/2 z-20 w-[min(43vw,720px)] -translate-x-1/2">
           <img
@@ -179,19 +184,24 @@ export default function Hero() {
               objectFit: 'contain',
               objectPosition: 'center bottom',
               filter: 'contrast(1.06) brightness(0.95) saturate(1.03)',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 72%, rgba(0,0,0,0.9) 84%, transparent 100%)',
-              maskImage: 'linear-gradient(to bottom, black 0%, black 72%, rgba(0,0,0,0.9) 84%, transparent 100%)',
+              WebkitMaskImage:
+                'linear-gradient(to bottom, black 0%, black 72%, rgba(0,0,0,0.9) 84%, transparent 100%)',
+              maskImage:
+                'linear-gradient(to bottom, black 0%, black 72%, rgba(0,0,0,0.9) 84%, transparent 100%)',
             }}
           />
         </div>
 
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] h-[30vh]"
-          style={{ background: 'linear-gradient(to top, #050605 0%, rgba(5,6,5,0.94) 28%, rgba(5,6,5,0.5) 62%, transparent 100%)' }}
+          style={{
+            background:
+              'linear-gradient(to top, #050605 0%, rgba(5,6,5,0.94) 28%, rgba(5,6,5,0.5) 62%, transparent 100%)',
+          }}
         />
       </div>
 
-      {/* Mobile */}
+      {/* Mobile view */}
       <div className="relative min-h-[100svh] overflow-hidden px-5 pb-7 pt-24 md:hidden">
         <div className="pointer-events-none relative z-10 select-none text-center">
           <h1
@@ -217,15 +227,20 @@ export default function Hero() {
               objectFit: 'contain',
               objectPosition: 'center bottom',
               filter: 'contrast(1.06) brightness(0.95) saturate(1.03)',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 76%, rgba(0,0,0,0.88) 86%, transparent 100%)',
-              maskImage: 'linear-gradient(to bottom, black 0%, black 76%, rgba(0,0,0,0.88) 86%, transparent 100%)',
+              WebkitMaskImage:
+                'linear-gradient(to bottom, black 0%, black 76%, rgba(0,0,0,0.88) 86%, transparent 100%)',
+              maskImage:
+                'linear-gradient(to bottom, black 0%, black 76%, rgba(0,0,0,0.88) 86%, transparent 100%)',
             }}
           />
         </div>
 
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] h-[43vh]"
-          style={{ background: 'linear-gradient(to top, #050605 0%, rgba(5,6,5,0.96) 30%, rgba(5,6,5,0.55) 68%, transparent 100%)' }}
+          style={{
+            background:
+              'linear-gradient(to top, #050605 0%, rgba(5,6,5,0.96) 30%, rgba(5,6,5,0.55) 68%, transparent 100%)',
+          }}
         />
 
         <div className="absolute inset-x-5 bottom-6 z-40 rounded-[34px] border border-white/15 bg-white/[0.045] px-5 py-7 text-center backdrop-blur-md">
@@ -237,21 +252,22 @@ export default function Hero() {
             {personal.bio}
           </p>
 
-          <div className="flex justify-center gap-5">
-            {socials.map(s => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={s.label}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#4DDCFF]/35 text-[#4DDCFF]"
-                style={{ boxShadow: '0 0 28px rgba(77,220,255,0.12)' }}
-              >
-                {s.svg}
-              </a>
-            ))}
-          </div>
+          {/* Mobile fix: removed GitHub/LinkedIn/Medium icons and added Work Experience button */}
+          <a
+            href="./Work"
+            aria-label="View Work Experience"
+            className="mx-auto inline-flex items-center gap-4 rounded-full px-7 py-4 text-[15px] font-bold text-[#071000] transition-all duration-300 hover:-translate-y-1"
+            style={{
+              background: '#4DDCFF',
+              boxShadow: '0 18px 45px rgba(156,255,0,0.24)',
+              textDecoration: 'none',
+            }}
+          >
+            Work Experience
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-lg text-[#071000]">
+              ↗
+            </span>
+          </a>
         </div>
       </div>
 
@@ -283,8 +299,10 @@ export default function Hero() {
                 to { transform: translateX(-50%); }
               }
             `}</style>
+
             <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#050605] to-transparent" />
             <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#050605] to-transparent" />
+
             <div
               className="flex w-max items-center gap-5 whitespace-nowrap px-5"
               style={{ animation: 'toolMarquee 26s linear infinite' }}
