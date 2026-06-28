@@ -3,6 +3,13 @@ import { useState } from 'react'
 const categories = ['All', 'Marketing', 'Books', 'Coding']
 
 const blogs = [
+    {
+    category: 'Marketing',
+    title: 'Decoy Effect: සේල්ස් ඉහළ නංවන මාකටින් Secret එක',
+    subtitle: 'Writing cleaner and more maintainable Java code',
+    image: '/blog/didyou.png',
+    url: 'https://medium.com/@smatheesha76/decoy-effect-සේල්ස්-ඉහළ-නංවන-මාකටින්-secret-එක-9f5e3c1b8d4a',
+  },
   {
     category: 'Marketing',
     title: 'වර්ණවල රහස් භාෂාව',
