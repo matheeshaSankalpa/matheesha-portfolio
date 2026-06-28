@@ -1,4 +1,8 @@
 const videos = [
+    {
+    title: 'Short Video 04',
+    url: 'https://www.youtube.com/embed/CK2M4dNLSpI',
+  },
   {
     title: 'Short Video 01',
     url: 'https://www.youtube.com/embed/E9e7v8BPIDk',
@@ -10,12 +14,7 @@ const videos = [
   {
     title: 'Short Video 03',
     url: 'https://www.youtube.com/embed/MSyCnaXfZ0o',
-  }, 
-  {
-    title: 'Short Video 04',
-    url: 'https://youtube.com/shorts/CK2M4dNLSpI?si=2P7AJ6IMSTDu8EDu',
-  }
-
+  },
 ]
 
 export default function Videos() {
