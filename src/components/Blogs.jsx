@@ -3,13 +3,21 @@ import { useState } from 'react'
 const categories = ['All', 'Marketing', 'Books', 'Coding']
 
 const blogs = [
+   {
+    category: 'Marketing',
+    title: 'ඇයි ඔයා අදම බඩු ගන්න හදිස්සි වෙන්නේ? — Scarcity සහ Loss Aversion වල රහස',
+    subtitle: 'Scarcity සහ Loss Aversion වල රහස',
+    image: '/blog/ONLY 3.png',
+    url: 'https://medium.com/@smatheesha76/%E0%B6%87%E0%B6%BA%E0%B7%92-%E0%B6%94%E0%B6%BA%E0%B7%8F-%E0%B6%85%E0%B6%AF%E0%B6%B8-%E0%B6%B6%E0%B6%A9%E0%B7%94-%E0%B6%9C%E0%B6%B1%E0%B7%8A%E0%B6%B1-%E0%B7%84%E0%B6%AF%E0%B7%92%E0%B7%83%E0%B7%8A%E0%B7%83%E0%B7%92-%E0%B7%80%E0%B7%99%E0%B6%B1%E0%B7%8A%E0%B6%B1%E0%B7%9A-scarcity-%E0%B7%83%E0%B7%84-loss-aversion-%E0%B7%80%E0%B6%BD-%E0%B6%BB%E0%B7%84%E0%B7%83-ca75ede6ba99?sharedUserId=smatheesha76',
+  },
     {
     category: 'Marketing',
     title: 'Decoy Effect: සේල්ස් ඉහළ නංවන මාකටින් Secret එක',
-    subtitle: 'Writing cleaner and more maintainable Java code',
+    subtitle: 'මේක නිකන්ම ට්‍රික් එකක් නෙවෙයි, මේක පට්ට Marketing Strategy එකක්. අද මම ඔයාට පැහැදිලි කරන්නේ ලෝකයේ ප්‍රබලම Brands තමන්ගේ Sales ඉහළ නංවා ගැනීමට භාවිතා කරන ‘Decoy Effect’ නම් මනෝවිද්‍යාත්මක උපාය මාර්ගය ගැනයි.',
     image: '/blog/didyou.png',
     url: 'https://medium.com/@smatheesha76/decoy-effect-සේල්ස්-ඉහළ-නංවන-මාකටින්-secret-එක-9f5e3c1b8d4a',
   },
+
   {
     category: 'Marketing',
     title: 'වර්ණවල රහස් භාෂාව',
