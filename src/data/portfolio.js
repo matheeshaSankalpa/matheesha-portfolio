@@ -10,6 +10,15 @@ export const blogs = [
   {
     category: "Marketing",
     title:
+      "Brand එකක් කියන්නේ ඔයාගේ Logo එක නෙවෙයි:",
+    subtitle: "Business එකක් කරද්දී ඔයා අනිවාර්යයෙන්ම දැනගන්න ඕන ඇත්තම කතාව.",
+    image: "/blog/brand.png",
+    url: "https://medium.com/@smatheesha76/brand-%E0%B6%91%E0%B6%9A%E0%B6%9A%E0%B7%8A-%E0%B6%9A%E0%B7%92%E0%B6%BA%E0%B6%B1%E0%B7%8A%E0%B6%B1%E0%B7%9A-%E0%B6%94%E0%B6%BA%E0%B7%8F%E0%B6%9C%E0%B7%9A-logo-%E0%B6%91%E0%B6%9A-%E0%B6%B1%E0%B7%99%E0%B7%80%E0%B7%99%E0%B6%BA%E0%B7%92-c4f1c30b1404",
+  },
+
+  {
+    category: "Marketing",
+    title:
       "ඇයි ඔයා අදම බඩු ගන්න හදිස්සි වෙන්නේ? : Scarcity සහ Loss Aversion වල රහස",
     subtitle: "Scarcity සහ Loss Aversion වල රහස",
     image: "/blog/ONLY 3.png",
