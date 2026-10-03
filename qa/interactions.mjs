@@ -1,6 +1,7 @@
 import { chromium } from "@playwright/test";
 import assert from "node:assert/strict";
 import { writeFile } from "node:fs/promises";
+import { checkVisibleReveals, checkReplay } from "./reveal-helpers.mjs";
 
 const base = process.env.QA_URL || "http://127.0.0.1:4173";
 const browser = await chromium.launch({ channel: "msedge", headless: true });
@@ -36,8 +37,15 @@ try {
       }
     });
     await page.waitForTimeout(900);
-    assert.equal(await page.locator(".reveal:not(.is-visible)").count(), 0);
-    checks.push("Normal-motion reveal: " + route);
+    await checkVisibleReveals(page, route);
+    console.log("Checking replay " + route);
+    const replayed = await checkReplay(
+      page,
+      page.locator("main .reveal").last(),
+    );
+    checks.push(
+      `Normal-motion reveal${replayed ? " and replay" : " (form never fully leaves viewport)"}: ${route}`,
+    );
   }
   await page.goto(base);
   const card = page.locator(".bento-card").first();

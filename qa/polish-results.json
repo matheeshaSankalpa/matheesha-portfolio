@@ -1,0 +1,8 @@
+{
+  "base": "http://127.0.0.1:4176",
+  "status": "passed",
+  "checks": [
+    "All nine requested widths, both themes: hero, filled illustration frames, contact character, eight real social links, official marks, WhatsApp and corrected education",
+    "Every Home, Work, Skills, Education, Blog and Video card replays after leaving/re-entering; refresh, Home > Work > Home, edge hysteresis, filter updates, live reduced motion and visible intermediate replay tested on desktop/mobile in both themes"
+  ]
+}

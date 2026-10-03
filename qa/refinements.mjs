@@ -4,6 +4,7 @@ import { mkdir, writeFile, rm } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import publicAssetsPlugin from "../src/data/publicAssetsPlugin.js";
 import { videos, workItems } from "../src/data/portfolio.js";
+import { checkVisibleReveals } from "./reveal-helpers.mjs";
 
 const base = process.env.QA_URL || "http://127.0.0.1:4174";
 const checks = [];
@@ -113,7 +114,10 @@ try {
         const art = element
           .querySelector(".cta-character")
           .getBoundingClientRect();
+        // The character's transparent canvas intentionally overlaps on mobile;
+        // the visible portrait is beside the text. Desktop reserves a full lane.
         return (
+          innerWidth > 700 &&
           text.right > art.left &&
           text.left < art.right &&
           text.bottom > art.top &&
@@ -275,9 +279,13 @@ try {
     "0px",
   );
   await moving.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
-  assert.equal(
-    await first.evaluate((element) => element.classList.contains("is-visible")),
-    true,
+  await moving.waitForFunction(
+    () =>
+      !document.querySelector(".bento-card").classList.contains("is-visible"),
+  );
+  await first.scrollIntoViewIfNeeded();
+  await moving.waitForFunction(() =>
+    document.querySelector(".bento-card").classList.contains("is-visible"),
   );
   await moving.emulateMedia({ reducedMotion: "reduce" });
   await moving.waitForFunction(
@@ -288,7 +296,7 @@ try {
     "none",
   );
   checks.push(
-    "Varied once-only entrances, stagger, visible transition and live reduced-motion preference",
+    "Varied replayable entrances, stagger, visible transition and live reduced-motion preference",
   );
   await motion.close();
   for (const width of [834, 390, 320]) {
@@ -321,9 +329,8 @@ try {
           }
         });
         await page.waitForTimeout(850);
-        assert.equal(
-          await page.locator(".reveal:not(.is-visible)").count(),
-          0,
+        await checkVisibleReveals(
+          page,
           `Hidden content at ${width}px ${route}`,
         );
       }

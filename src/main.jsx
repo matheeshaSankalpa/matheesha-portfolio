@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import "./styles/responsive.css";
 import "./styles/refinements.css";
+import "./styles/polish.css";
 import "./styles/motion.css";
 import App from "./App.jsx";
 

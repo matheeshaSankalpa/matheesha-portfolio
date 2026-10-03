@@ -332,15 +332,16 @@ export const academicItems = [
       "Completed a Cyber Security Diploma and gained foundational knowledge in Digital Security and Technology.",
   },
   {
-    period: "April 2024 - Present",
+    period: "April 2024 - January 2026",
     logo: "https://www.google.com/s2/favicons?domain=cardiffmet.ac.uk&sz=128",
     title: "Cardiff Metropolitan University",
     subtitle: "HD in Computer Software Engineering",
+    status: "Completed",
     description:
-      "Started software engineering studies, building technical knowledge in programming, web development, and software concepts.",
+      "Completed software engineering studies, building technical knowledge in programming, web development, and software concepts.",
   },
   {
-    period: "Present",
+    period: "April 2024 - Present",
     logo: "https://www.google.com/s2/favicons?domain=ruh.ac.lk&sz=128",
     title: "University of Ruhuna",
     subtitle: "Bachelor of Business Administration - BBA",
@@ -348,7 +349,7 @@ export const academicItems = [
       "Following Business Administration and Management studies with a focus on Marketing, Business strategy, and Digital growth.",
   },
   {
-    period: "Present",
+    period: "June 2026 - Present",
     logo: "https://www.google.com/s2/favicons?domain=cardiffmet.ac.uk&sz=128",
     title: "Cardiff Metropolitan University",
     subtitle: "BSc (Hons) in Data Science - Top Up",

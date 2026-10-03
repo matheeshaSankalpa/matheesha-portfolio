@@ -48,6 +48,9 @@ export default function Timeline() {
                   <h2>{item.title}</h2>
                 </div>
                 <h3>{item.subtitle}</h3>
+                {item.status && (
+                  <span className="education-status">{item.status}</span>
+                )}
                 <p>{item.description}</p>
               </article>
             ))}

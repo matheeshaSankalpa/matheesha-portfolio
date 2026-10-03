@@ -41,7 +41,7 @@ Changed application files: `src/App.jsx`, `src/main.jsx`, `src/pages/Home.jsx`, 
 
 New implementation files:
 
-- `src/hooks/useScrollReveal.js`: reusable IntersectionObserver system, once per mounted element, with route cleanup, filter-change discovery and live reduced-motion handling.
+- `src/hooks/useScrollReveal.js`: reusable replayable IntersectionObserver system, with route cleanup, filter-change discovery and live reduced-motion handling.
 - `src/styles/motion.css`: rise, left, right and scale entrances; 650ms easing, 85ms stagger, smaller mobile movement and independent hover transforms.
 - `src/styles/refinements.css`: subtle homepage grid, character placement, dimensional tool compositions and compact responsive galleries.
 - `src/components/ToolComposition.jsx` and `src/data/tools.js`: curated real logos for existing disciplines.
@@ -93,12 +93,27 @@ $env:QA_URL='http://127.0.0.1:4173'
 npm.cmd run qa
 node qa/interactions.mjs
 node qa/refinements.mjs
+node qa/polish.mjs
 ```
 
 Browser QA uses the locally installed Microsoft Edge in headless mode. Results are written to `qa/results.json` and `qa/interactions-results.json`. Screenshots are saved in `qa/screenshots/` and excluded from version control.
 
-Targeted refinement results are in `qa/refinement-results.json`. These checks cover ten responsive widths in both themes, logo bounds, CTA text/art separation, compact thumbnails, actual poster ratios, all four playback buttons, every Work collection's lightbox, numeric asset discovery, staggered once-only reveals and live reduced-motion changes. `qa/live-video-results.json` records a separate live YouTube playback check for all four original videos.
+Targeted refinement results are in `qa/refinement-results.json`. These checks cover ten responsive widths in both themes, logo bounds, compact thumbnails, actual poster ratios, all four playback buttons, every Work collection's lightbox, numeric asset discovery, staggered replayable reveals and live reduced-motion changes. `qa/live-video-results.json` records a separate live YouTube playback check for all four original videos.
 
-The QA script checks all routes in both themes at 1440px, 834px, 390px and 320px, along with accessibility, content counts, broken images, overflow, theme persistence, navigation, filters, deep links, modal focus, contact validation and reduced motion. Contact submission and the YouTube player are intercepted locally in tests. No test message is sent.
+The QA script checks all eight routes in both themes at 1440, 1280, 1024, 768, 430, 390, 375, 360 and 320px, along with accessibility, content counts, broken images, overflow, theme persistence, navigation, filters, deep links, modal focus, contact validation and reduced motion. Contact submission and the YouTube player are intercepted locally in tests. No test message is sent.
+
+## Final polish
+
+The approved visual identity, theme tokens, type, desktop hero and all seven illustrations are preserved.
+
+Application files changed in this pass: `src/hooks/useScrollReveal.js`, `src/styles/motion.css`, `src/styles/polish.css`, `src/main.jsx`, `src/components/Connect.jsx`, `src/components/SocialIcon.jsx`, `src/components/Footer.jsx`, `src/components/Contact.jsx`, `src/components/Timeline.jsx`, `src/data/socials.js` and `src/data/portfolio.js`. Added marks are in `public/socials/`. QA scripts/results and this documentation were updated separately.
+
+- Reveals now replay after every sufficiently distant exit. Entrance uses 6% visibility and a 24px bottom inset; a separate 96px exit buffer prevents boundary flicker. Elements stay observed, detached filtered cards are cleaned up, and current geometry guards against stale observer records during quick scrolling. Focused content stays readable. Reduced motion reveals everything immediately.
+- `src/styles/polish.css` contains responsive portrait sizing, intentional illustration crops, the larger contact character and Connect cards. Large mobile illustrations fill their frames; transparent portraits and genuine brand logos retain appropriate sizing. The mobile Design image reserves its frame before lazy loading.
+- `src/components/Connect.jsx`, `SocialIcon.jsx` and `src/data/socials.js` provide exactly eight social cards. URLs were reused from current data and the original portfolio's Git history. LinkedIn, TikTok, YouTube, Facebook, Medium, X / Twitter, Threads and Instagram are centralized in one list. WhatsApp uses the existing real contact URL separately. All URLs are populated.
+- `public/socials/` contains nine local recognizable SVG marks from Simple Icons, including WhatsApp. No character artwork was replaced or generated in this pass.
+- Academic dates are April 2024 - January 2026 (Completed) for the Higher Diploma, April 2024 - Present for Ruhuna, and June 2026 - Present for Data Science Top Up. Existing stored qualification titles are unchanged.
+
+`qa/polish.mjs` exercises every relevant card's exit/re-entry, refresh, route navigation, filter remounts, viewport-edge stability, reduced motion, image frames, eight social cards and contact character geometry. Results are recorded in `qa/polish-results.json`. `qa/polish-visual.mjs` captures both themes at all requested widths and checks development console errors. See `QA_REPORT.md` for the final verification record.
 
 `npm.cmd run format` formats the source files.

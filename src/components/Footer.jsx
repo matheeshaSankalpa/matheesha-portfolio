@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { personal } from "../data/content";
-import { Arrow } from "./ui";
+import Connect from "./Connect";
 export default function Footer() {
   return (
     <footer className="site-footer container">
+      <Connect />
       <div className="footer-top">
         <Link className="wordmark" to="/">
           matheesha<span>✳</span>
@@ -12,19 +12,6 @@ export default function Footer() {
           Somewhere between a campaign,
           <br />a design file and a browser tab.
         </p>
-        <div className="footer-socials">
-          {[
-            ["LinkedIn", personal.linkedin],
-            ["GitHub", personal.github],
-            ["Medium", personal.medium],
-            ["HackerRank", personal.hackerrank],
-          ].map(([label, url]) => (
-            <a href={url} key={label} target="_blank" rel="noreferrer">
-              {label}
-              <Arrow diagonal />
-            </a>
-          ))}
-        </div>
       </div>
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Matheesha Sankalpa</p>

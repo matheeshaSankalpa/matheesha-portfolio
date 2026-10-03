@@ -1,5 +1,5 @@
 {
-  "base": "http://127.0.0.1:4174",
+  "base": "http://127.0.0.1:4176",
   "findings": [
     {
       "route": "/",
@@ -100,6 +100,198 @@
     {
       "route": "/",
       "theme": "light",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "light",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "light",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "light",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "light",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "light",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "light",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "dark",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "dark",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "dark",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "dark",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "dark",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "dark",
+      "size": "desktop-1280",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "light",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "light",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "light",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "light",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "light",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "light",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "dark",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "dark",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "dark",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "dark",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "dark",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "dark",
+      "size": "desktop-1024",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "light",
       "size": "tablet",
       "status": "passed"
     },
@@ -196,6 +388,102 @@
     {
       "route": "/",
       "theme": "light",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "light",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "light",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "light",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "light",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "light",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "light",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "dark",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "dark",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "dark",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "dark",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "dark",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "dark",
+      "size": "mobile-430",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "light",
       "size": "mobile",
       "status": "passed"
     },
@@ -287,6 +575,198 @@
       "route": "/education",
       "theme": "dark",
       "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "light",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "light",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "light",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "light",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "light",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "light",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "dark",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "dark",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "dark",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "dark",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "dark",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "dark",
+      "size": "mobile-375",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "light",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "light",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "light",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "light",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "light",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "light",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "dark",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "dark",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "dark",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "dark",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "dark",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "size": "mobile-360",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "dark",
+      "size": "mobile-360",
       "status": "passed"
     },
     {

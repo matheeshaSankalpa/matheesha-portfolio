@@ -35,6 +35,11 @@
   translate: 0 0;
   scale: 1;
 }
+.reveal:not(.is-visible) {
+  /* Reset outside the viewport immediately, ready for the next entrance. */
+  transition-duration: 0s;
+  transition-delay: 0s;
+}
 @media (max-width: 700px) {
   .reveal {
     --reveal-distance: 20px;

@@ -26,8 +26,13 @@ const routes = [
 ];
 const sizes = [
   { name: "desktop", width: 1440, height: 1000 },
-  { name: "tablet", width: 834, height: 1112 },
+  { name: "desktop-1280", width: 1280, height: 900 },
+  { name: "desktop-1024", width: 1024, height: 900 },
+  { name: "tablet", width: 768, height: 1024 },
+  { name: "mobile-430", width: 430, height: 932 },
   { name: "mobile", width: 390, height: 844 },
+  { name: "mobile-375", width: 375, height: 812 },
+  { name: "mobile-360", width: 360, height: 800 },
   { name: "small-mobile", width: 320, height: 780 },
 ];
 const interactionsOnly = process.argv.includes("--interactions-only");

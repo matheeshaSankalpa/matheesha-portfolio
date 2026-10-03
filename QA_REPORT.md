@@ -1,111 +1,39 @@
-﻿# Portfolio refinement QA report
+﻿# Portfolio final polish QA
 
 Date: 2026-10-03
 
-Result: passed.
+The approved visual identity, theme tokens, typography, desktop hero, subtle grid, Work/Blog/Video layouts and all seven existing illustrations are preserved.
 
-## Running application
+## Requested fixes
 
-- Development app: http://127.0.0.1:5174.
-- Production preview: http://127.0.0.1:4174.
-- `npm.cmd run lint` passes.
-- `npm.cmd run build` passes without errors or warnings.
-- All eight routes load in the development app without console or application errors.
-- No new dependencies were added during this refinement pass.
+- Replayable scroll reveals use a 6% entrance threshold, a 24px bottom inset and a separate 96px exit buffer. Elements stay observed. Geometry guards prevent stale observer events during quick scrolling. Route cleanup, filter remounts, focus and live reduced-motion changes work.
+- Mobile profile is smaller and lower inside the existing composition. Profile switching and crossfade remain intact.
+- Mobile/tablet skill illustrations fill their frames with cover and individual focal positions. Mobile Design artwork reserves a stable 280px frame before lazy loading. Transparent portraits and genuine brand logos retain appropriate sizing.
+- Larger contact character has a modest desktop head breakout, with arrow and Say hello shifted left. Mobile has a larger intentionally cropped composition and clear text/buttons.
+- Connect has exactly eight prominent profiles, four desktop columns and two mobile columns. Every platform has a recognizable local mark. WhatsApp retains the original real contact URL and gains its recognizable icon.
+- Higher Diploma: April 2024 - January 2026, Completed. Ruhuna: April 2024 - Present. Data Science Top Up: June 2026 - Present. Exact stored programme names are unchanged.
 
-## Preservation and requested changes
+## Social provenance
 
-The established light/dark tokens, typography, selection highlight, hero composition, profile switching, original three character illustrations and genuine content remain intact.
+`src/data/socials.js` centralizes LinkedIn, TikTok, YouTube, Facebook, Medium, X / Twitter, Threads and Instagram. LinkedIn and Medium use current personal data. The other six URLs reuse the original social block from Git commit `08f3c27`. WhatsApp retains `https://wa.me/94724105054`.
 
-- Homepage Selected Work block removed; Work page and every original artwork retained.
-- About star replaced with a personal illustrated portrait including shoulders and upper chest.
-- Subtle CSS grid texture added only around selected homepage sections.
-- Curated recognizable tool marks added to Marketing/Data bento cards and existing Skills categories.
-- Generic Skills data chart replaced with Matheesha as a data detective.
-- Work changed to project information beside compact galleries, with two-column mobile thumbnails and existing full-size image previews.
-- Gallery discovery remains build-time, preserves original public URLs and sorts filenames numerically.
-- Video hero receives a personal content-creator illustration.
-- Every video has a genuine local vertical YouTube poster and click-to-play interaction.
-- Visible numbered Short labels removed; all four original embed URLs retained.
-- Repeated contact CTA receives personal phone/listening character artwork.
-- Old unused star, generic chart and numbered-poster CSS removed.
-- No em dashes appear in rendered site copy.
+All eight URLs are populated. No manual entry is needed. Connect has no HackerRank or GitHub cards. Original personal data and development credential links remain in their existing sources.
 
-## Browser QA
+## Final verification
 
-Microsoft Edge, headless. Eight routes, both themes and four widths: 1440px, 834px, 390px and 320px. All 64 combinations pass on the final production build.
+- Build and lint pass without errors.
+- Development: http://127.0.0.1:5174. Production preview: http://127.0.0.1:4176.
+- Eight routes, both themes, nine requested widths: 144 combinations. Widths: 1440, 1280, 1024, 768, 430, 390, 375, 360 and 320px.
+- No console/application errors, broken local images, horizontal overflow or em dashes in rendered copy.
+- Desktop WCAG 2 A/AA and WCAG 2.1 AA automated checks pass in both themes.
+- Every targeted Home, Work, Skills, Education, Blog and Video card tested for repeated exit/re-entry on desktop/mobile in both themes. Refresh, Home > Work > Home, filters, edge stability, stagger, intermediate animation states and reduced motion pass.
+- Hero, illustration frame fill, contact character, social grid, focus/hover and WhatsApp checked at every requested width in both themes. Desktop, tablet and mobile captures visually reviewed.
+- Theme persistence, initial/live system preference, both profiles, crossfade, cross-tab sync and restricted storage pass.
+- Navigation, focus, skip link, filters, deep links, 404 and all Work lightboxes pass.
+- All four original video posters, 9:16 frames, playback buttons and corresponding embed URLs pass. No video content or layout was changed.
+- Contact validation and POST payload tested with local request interception. No message was sent.
+- Genuine content retained: four Work collections, 24 designs, 13 blogs, five academic entries, six primary credentials, five development credential links, 25 grouped skills and four videos.
 
-- No browser console or uncaught application errors.
-- No broken local images or horizontal overflow.
-- Exactly one main heading per route.
-- Automated WCAG 2 A/AA and WCAG 2.1 AA checks report no violations on all desktop routes in both themes.
-- Theme choice persists in both modes, honors initial system preference and synchronizes across tabs.
-- Light mode uses `profile2.png`; dark mode uses `profile.png`; crossfade works without reload.
-- Mobile navigation, keyboard focus, skip link, route focus, category filters, hash deep links and 404 behavior pass.
-- Work image preview, Escape, close button and focus restoration pass for all four collections.
-- Contact validation and POST payload pass with the outgoing request intercepted locally. No message was sent.
+Evidence: `qa/results.json`, `qa/interactions-results.json`, `qa/refinement-results.json`, `qa/polish-results.json`. Captures: ignored `qa/screenshots/`.
 
-## Targeted refinement QA
-
-`qa/refinements.mjs` passes.
-
-- Additional responsive checks at 1440, 1100, 1024, 834, 768, 701, 700, 640, 390 and 320px in both themes.
-- Tool visuals stay within their Marketing and Data cards.
-- Contact heading and character artwork do not collide.
-- Work thumbnails remain compact at every tested width; mobile uses two columns.
-- All four video frames retain their 9:16 ratio at every tested width.
-- Homepage introduction, Learning by doing and sketchbook sections remain present; Selected Work is absent from Home.
-- Build-time fixture confirms automatic new-file discovery and ordering of flyer1, flyer2, flyer10, flyer16 and flyer17.
-- Every collection opens its original full-resolution image.
-- All four poster buttons load their corresponding original YouTube embeds with autoplay.
-- Entrances include left, right, rise and scale, with small stagger and visible intermediate transition states.
-- Reveals happen once per mounted element, remain compatible with hover motion and respond to live reduced-motion changes.
-- Normal-motion Home, Skills, Work and Videos pass at tablet and mobile widths in both themes, with no hidden content or horizontal scrollbar.
-
-`qa/interactions.mjs` also passes normal-motion reveals on all seven original routes, bento hover motion, portrait crossfade, cross-tab theme updates, visible keyboard focus and storage-unavailable behavior.
-
-Desktop, tablet and mobile screenshots were visually reviewed, including the new portraits, tool compositions, compact Work galleries and actual video posters. The full gallery, hover and reduced-motion behaviors were exercised in the browser.
-
-## Live video playback
-
-All four real YouTube players were tested without interception:
-
-- Decoy Effect: playback progressed, ready state 4, not paused, no media/player error.
-- Red Bull and Social Proof: playback progressed, ready state 4, not paused, no media/player error.
-- AI Search: playback progressed, ready state 4, not paused, no media/player error.
-- Facebook Ads and the 60/40 Rule: playback progressed, ready state 4, not paused, no media/player error.
-
-Evidence: `qa/live-video-results.json`. The ordinary repeatable QA tests intercept external services so they remain reliable without sending messages or depending on YouTube.
-
-## Content and asset inventory
-
-- Four work collections and all 24 genuine designs retained.
-- All 13 original blog articles, links, images and Sinhala/English text retained.
-- Five academic entries, six primary credentials and five additional original certificate links retained.
-- All 25 original grouped skills and additional original web/supporting tools retained.
-- Original contact, social and internship information retained.
-- All 49 original public assets remain present.
-- Original three illustration PNG/WebP pairs retained unchanged.
-- Four new illustration PNG/WebP pairs added.
-- Nine local recognizable tool-logo SVGs added.
-- Four genuine vertical video posters added.
-- Public asset total: 76 files.
-
-New illustration stems in `public/illustrations/`:
-
-- `matheesha-about`
-- `matheesha-data-detective`
-- `matheesha-video`
-- `matheesha-contact`
-
-All were generated with the built-in imagegen tool using the real face reference and original successful artwork as identity/style references. About, Video and Contact retain true transparency. Exact prompts are in `ILLUSTRATION_PROMPTS.md`.
-
-## Updating content
-
-No manual replacement assets or unfinished implementation steps remain.
-
-Add new artwork under `public/work/<project>/`, following the existing filename pattern, then rebuild for production. Project metadata is centralized in `src/data/portfolio.js`; `src/data/work.js` joins it to the Vite manifest. No gallery JSX edits are needed for additional images.
-
-New video entries need a data record and genuine poster. Blogs, Education, Skills and credentials remain data-driven. The existing FormSubmit account configuration is unchanged; actual inbox delivery was not tested.
-
-Raw results: `qa/results.json`, `qa/interactions-results.json`, `qa/refinement-results.json`, `qa/live-video-results.json`. Screenshots: `qa/screenshots/`.
+No dependencies or new character artwork were added. Nine local social/communication SVG marks were added. No manual content or asset updates remain for the requested fixes.

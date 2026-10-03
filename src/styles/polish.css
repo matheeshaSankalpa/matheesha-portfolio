@@ -1,0 +1,286 @@
+/* Targeted finishing touches. The approved type, palette and layouts stay intact. */
+.education-status {
+  display: inline-block;
+  margin: 12px 0 0;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* A transparent character can extend beyond the rounded card background. */
+.cta-inner {
+  overflow: visible;
+  min-height: clamp(340px, 25vw, 360px);
+}
+.cta-heading {
+  max-width: calc(100% - 385px);
+}
+.cta-bottom {
+  max-width: calc(100% - 405px);
+}
+.cta-character {
+  width: clamp(375px, 29vw, 420px);
+  aspect-ratio: 1;
+  right: -6px;
+  bottom: 0;
+}
+.cta-character .illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.connect-section {
+  margin-bottom: 65px;
+}
+.connect-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.connect-heading h2 {
+  font-size: clamp(36px, 4.5vw, 62px);
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+.connect-heading p:not(.section-label) {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.65;
+  margin-top: 15px;
+  max-width: 390px;
+}
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.social-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px 12px;
+  padding: 24px;
+  min-height: 148px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 600;
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    background-color 350ms ease;
+}
+.social-card .social-icon {
+  grid-column: 1 / -1;
+  width: 35px;
+  height: 35px;
+}
+.social-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+.social-card .arrow {
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+}
+.social-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: var(--text);
+  -webkit-mask: var(--social-icon) center / contain no-repeat;
+  mask: var(--social-icon) center / contain no-repeat;
+}
+.social-icon[data-platform="linkedin"] {
+  background-color: #0a66c2;
+}
+.social-icon[data-platform="youtube"] {
+  background-color: #e52222;
+}
+.social-icon[data-platform="facebook"] {
+  background-color: #1877f2;
+}
+.social-icon[data-platform="instagram"] {
+  background-color: #d62976;
+}
+.social-icon[data-platform="whatsapp"] {
+  background-color: #138536;
+}
+.connect-whatsapp {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  white-space: nowrap;
+}
+.connect-whatsapp:hover {
+  border-color: var(--primary);
+}
+.contact-whatsapp .whatsapp-mark {
+  position: absolute;
+  right: 28px;
+  top: 34px;
+  width: 55px;
+  height: 55px;
+  background-color: var(--on-accent);
+}
+.footer-top {
+  justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  .cta-inner {
+    min-height: 355px;
+  }
+  .cta-heading,
+  .cta-bottom {
+    max-width: calc(100% - 265px);
+  }
+  .cta-character {
+    width: 300px;
+    right: 0;
+  }
+  /* Fill illustration frames, retaining a focal point for each scene. */
+  .skill-art .illustration {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .skill-design .illustration {
+    object-position: 50% 45%;
+  }
+  .skill-development .illustration {
+    object-position: 52% 55%;
+  }
+  .skill-marketing .illustration {
+    object-position: 63% 45%;
+  }
+  .skill-data .illustration {
+    object-position: 46% 45%;
+  }
+  .social-card {
+    padding: 22px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-art {
+    margin-top: 32px;
+    padding-top: 24px;
+  }
+  .portrait-panel {
+    width: calc(100% - 24px);
+    max-width: 350px;
+    height: clamp(370px, 104vw, 448px);
+    margin-inline: auto;
+  }
+  .profile-images {
+    height: 82%;
+    inset-inline: -2%;
+    bottom: -8px;
+  }
+  .design-bento .illustration {
+    flex: 0 0 280px;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: 50% 45%;
+  }
+  .sketchbook-art .illustration {
+    object-position: 60% center;
+  }
+  .cta-inner {
+    --cta-art-size: clamp(270px, 78vw, 340px);
+    overflow: hidden;
+    min-height: 0;
+  }
+  .cta-heading,
+  .cta-bottom {
+    max-width: none;
+  }
+  .cta-heading h2 {
+    text-wrap: initial;
+  }
+  .cta-heading h2 span {
+    display: block;
+  }
+  .cta-character {
+    width: var(--cta-art-size);
+    top: 128px;
+    bottom: auto;
+    left: calc(32vw - 17px);
+    right: auto;
+  }
+  .cta-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: calc(var(--cta-art-size) - 90px);
+    padding-bottom: 0;
+  }
+  .cta-bottom .text-link {
+    margin-top: 0;
+  }
+  .connect-section {
+    margin-bottom: 45px;
+  }
+  .connect-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .connect-heading h2 {
+    font-size: 42px;
+  }
+  .connect-heading p:not(.section-label) {
+    font-size: 13px;
+  }
+  .social-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .social-card {
+    padding: 20px;
+    min-height: 136px;
+    gap: 23px 8px;
+  }
+  .social-card .social-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .contact-whatsapp .whatsapp-mark {
+    width: 44px;
+    height: 44px;
+    right: 23px;
+  }
+}
+@media (max-width: 380px) {
+  .social-card {
+    padding: 17px;
+    font-size: 14px;
+  }
+  .connect-heading h2 {
+    font-size: 38px;
+  }
+  .contact-whatsapp .whatsapp-mark {
+    width: 36px;
+    height: 36px;
+    right: 20px;
+  }
+}
+@media (max-width: 350px) {
+  .cta-character {
+    top: 166px;
+  }
+}

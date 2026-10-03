@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { personal } from "../data/content";
 import { Arrow, PageHeading, SectionLabel } from "./ui";
+import SocialIcon from "./SocialIcon";
 export default function Contact() {
   const [submitting, setSubmitting] = useState(false);
   return (
@@ -36,23 +37,8 @@ export default function Contact() {
               <span>{personal.phone}</span>
               <Arrow diagonal />
             </div>
-            <span className="whatsapp-spark" aria-hidden="true">
-              ✳
-            </span>
+            <SocialIcon id="whatsapp" className="whatsapp-mark" />
           </a>
-          <div className="contact-socials">
-            {[
-              ["LinkedIn", personal.linkedin],
-              ["GitHub", personal.github],
-              ["Medium", personal.medium],
-              ["HackerRank", personal.hackerrank],
-            ].map(([name, url]) => (
-              <a key={name} href={url} target="_blank" rel="noreferrer">
-                {name}
-                <Arrow diagonal />
-              </a>
-            ))}
-          </div>
         </div>
         <form
           className="contact-form"
