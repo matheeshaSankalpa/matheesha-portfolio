@@ -5,8 +5,19 @@
   box-sizing: border-box;
 }
 html {
+  --scrollbar-thumb: var(--primary);
   scroll-behavior: smooth;
   scroll-padding-top: 105px;
+  scrollbar-color: var(--scrollbar-thumb) var(--bg);
+}
+html[data-theme="dark"] {
+  --scrollbar-thumb: var(--accent);
+}
+html::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+html::-webkit-scrollbar-track {
+  background-color: var(--bg);
 }
 body {
   margin: 0;
