@@ -1,0 +1,18 @@
+{
+  "base": "http://127.0.0.1:4174",
+  "status": "passed",
+  "checks": [
+    "Normal-motion reveal: /",
+    "Normal-motion reveal: /skills",
+    "Normal-motion reveal: /work",
+    "Normal-motion reveal: /blogs",
+    "Normal-motion reveal: /timeline",
+    "Normal-motion reveal: /videos",
+    "Normal-motion reveal: /contact",
+    "Bento hover remains independent of entrance motion",
+    "Smooth portrait crossfade",
+    "Theme synchronizes across tabs",
+    "Keyboard focus is visible",
+    "Theme works when storage is unavailable"
+  ]
+}

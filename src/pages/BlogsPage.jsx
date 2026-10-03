@@ -1,9 +1,8 @@
-import Blogs from '../components/Blogs'
-
+import Blogs from "../components/Blogs";
 export default function BlogsPage() {
   return (
-    <main className="min-h-screen bg-[#050605] pt-28">
+    <main id="main-content" tabIndex="-1">
       <Blogs />
     </main>
-  )
+  );
 }

@@ -1,0 +1,13 @@
+{
+  "base": "http://127.0.0.1:4174",
+  "status": "passed",
+  "checks": [
+    "Build-time gallery discovery, numeric ordering and new-file inclusion",
+    "Home content, logos, CTA, compact Work and 9:16 video previews at 10 widths in both themes",
+    "Every Work collection opens its original full-size image and restores focus",
+    "All four genuine video posters start their corresponding YouTube embeds",
+    "Varied once-only entrances, stagger, visible transition and live reduced-motion preference",
+    "Tablet and mobile normal-motion reveals, both themes, with no horizontal scrolling",
+    "No uncaught application errors during refinement checks"
+  ]
+}

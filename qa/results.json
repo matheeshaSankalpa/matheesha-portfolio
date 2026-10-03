@@ -1,0 +1,409 @@
+{
+  "base": "http://127.0.0.1:4174",
+  "findings": [
+    {
+      "route": "/",
+      "theme": "light",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "light",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "light",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "light",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "light",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "light",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "light",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "dark",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "dark",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "dark",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "dark",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "dark",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "dark",
+      "size": "desktop",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "light",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "light",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "light",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "light",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "light",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "light",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "dark",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "dark",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "dark",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "dark",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "dark",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "dark",
+      "size": "tablet",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "light",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "light",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "light",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "light",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "light",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "light",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "dark",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "dark",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "dark",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "dark",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "dark",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "dark",
+      "size": "mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "light",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "light",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "light",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "light",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "light",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "light",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/skills",
+      "theme": "dark",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/timeline",
+      "theme": "dark",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/work",
+      "theme": "dark",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/videos",
+      "theme": "dark",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/blogs",
+      "theme": "dark",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "route": "/education",
+      "theme": "dark",
+      "size": "small-mobile",
+      "status": "passed"
+    },
+    {
+      "status": "passed",
+      "checks": [
+        "Portrait crossfade without reload",
+        "Theme persistence in both modes",
+        "First-visit system preference",
+        "Live system preference without saved override",
+        "Reduced motion",
+        "Mobile menu and Escape focus",
+        "Route focus",
+        "Blog and work filters",
+        "Full-size gallery and Escape focus",
+        "Deep links",
+        "Video iframe",
+        "Contact validation and intercepted POST",
+        "Skip link",
+        "404"
+      ]
+    }
+  ],
+  "failures": []
+}

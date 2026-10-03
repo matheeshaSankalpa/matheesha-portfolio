@@ -1,9 +1,8 @@
-import Work from '../components/Work'
-
+import Work from "../components/Work";
 export default function WorkPage() {
   return (
-    <main className="min-h-screen bg-[#050605] pt-28">
+    <main id="main-content" tabIndex="-1">
       <Work />
     </main>
-  )
+  );
 }

@@ -1,9 +1,8 @@
-import Videos from '../components/Videos'
-
+import Videos from "../components/Videos";
 export default function VideosPage() {
   return (
-    <main className="min-h-screen bg-[#050605] pt-28">
+    <main id="main-content" tabIndex="-1">
       <Videos />
     </main>
-  )
+  );
 }

@@ -1,9 +1,8 @@
-import Contact from '../components/Contact'
-
+import Contact from "../components/Contact";
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[#050605] pt-28">
+    <main id="main-content" tabIndex="-1">
       <Contact />
     </main>
-  )
+  );
 }
