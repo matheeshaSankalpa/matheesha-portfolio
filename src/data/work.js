@@ -1,4 +1,4 @@
-import { workImages } from "virtual:portfolio-assets";
+import { workImages, workVideos } from "virtual:portfolio-assets";
 import { workItems } from "./portfolio";
 
 // The Vite manifest supplies naturally sorted files at build time. Metadata
@@ -8,6 +8,7 @@ export const workProjects = workItems.map((project) => ({
   images: workImages.filter((path) =>
     path.startsWith(`/work/${project.folder}/`),
   ),
+  videos: project.folder === "lagops" ? workVideos : [],
 }));
 export const workCategories = [
   "All",

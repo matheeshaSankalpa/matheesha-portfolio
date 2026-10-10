@@ -262,6 +262,63 @@
 .gallery-tile:focus-visible > span {
   opacity: 1;
 }
+.work-media-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 44px;
+  margin-top: 22px;
+  padding: 11px 20px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--inverse);
+  color: var(--on-inverse);
+  font-size: 12px;
+  font-weight: 600;
+}
+.work-media-toggle:hover {
+  background: var(--surface-alt);
+  color: var(--text);
+}
+.work-media-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+.work-video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 18px;
+  min-width: 0;
+  align-items: start;
+  justify-items: center;
+}
+.work-video-tile {
+  --video-height: min(560px, 75svh);
+  width: min(
+    100%,
+    calc(var(--video-height) * var(--video-aspect, 0.5625) + 22px)
+  );
+  min-width: 0;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--project-blue);
+}
+.work-video-tile video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--video-aspect, 0.5625);
+  border-radius: 10px;
+  object-fit: contain;
+}
+.work-video-tile figcaption {
+  padding: 12px 4px 2px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
 .video-hero {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.3fr);

@@ -77,6 +77,7 @@ function GalleryDialog({ selection, close }) {
 export default function Work() {
   const [filter, setFilter] = useState("All");
   const [selection, setSelection] = useState(null);
+  const [lagopsMedia, setLagopsMedia] = useState("flyers");
   const { hash } = useLocation();
   const navigate = useNavigate();
   const activeFilter = workProjects.some((item) => hash === "#" + item.folder)
@@ -137,40 +138,105 @@ export default function Work() {
                   <ToolTags items={item.tags} />
                 </div>
                 <p className="work-description">{item.description}</p>
-              </div>
-              <div
-                className="work-gallery"
-                style={{
-                  "--gallery-columns": Math.max(
-                    1,
-                    Math.min(5, item.images.length),
-                  ),
-                }}
-              >
-                {item.images.map((src, i) => (
+                {item.folder === "lagops" && (
                   <button
-                    key={src}
-                    className="gallery-tile"
-                    onClick={(event) => {
-                      opener.current = event.currentTarget;
-                      setSelection({
-                        src,
-                        alt: `${item.title}, design ${i + 1}`,
-                      });
-                    }}
-                    aria-label={`Enlarge ${item.title} design ${i + 1}`}
+                    type="button"
+                    className="work-media-toggle"
+                    aria-controls="lagops-gallery"
+                    aria-label={`Show Lagops Digital ${lagopsMedia === "flyers" ? "videos" : "flyers"}`}
+                    onClick={() =>
+                      setLagopsMedia((media) =>
+                        media === "flyers" ? "videos" : "flyers",
+                      )
+                    }
                   >
-                    <img
-                      src={src}
-                      alt={`${item.title}, design ${i + 1}`}
-                      loading="lazy"
-                    />
-                    <span>
-                      <Arrow diagonal />
-                    </span>
+                    {lagopsMedia === "flyers" ? "Video" : "Flyers"}
+                    <Arrow />
                   </button>
-                ))}
+                )}
               </div>
+              {item.folder === "lagops" && lagopsMedia === "videos" ? (
+                <div
+                  id="lagops-gallery"
+                  className="work-video-gallery"
+                  aria-label="Lagops Digital videos"
+                >
+                  {item.videos.length ? (
+                    item.videos.map((src, i) => (
+                      <figure className="work-video-tile" key={src}>
+                        <video
+                          src={src}
+                          controls
+                          playsInline
+                          preload="metadata"
+                          aria-label={`${item.title}, video ${i + 1}`}
+                          onLoadedMetadata={(event) => {
+                            const video = event.currentTarget;
+                            if (video.videoWidth && video.videoHeight) {
+                              video.parentElement.style.setProperty(
+                                "--video-aspect",
+                                video.videoWidth / video.videoHeight,
+                              );
+                            }
+                          }}
+                          onPlay={(event) => {
+                            event.currentTarget
+                              .closest(".work-video-gallery")
+                              .querySelectorAll("video")
+                              .forEach((video) => {
+                                if (video !== event.currentTarget)
+                                  video.pause();
+                              });
+                          }}
+                        >
+                          Your browser does not support video playback.
+                          <a href={src}>Download video {i + 1}</a>
+                        </video>
+                        <figcaption>
+                          Video {String(i + 1).padStart(2, "0")}
+                        </figcaption>
+                      </figure>
+                    ))
+                  ) : (
+                    <p className="muted">Videos coming soon.</p>
+                  )}
+                </div>
+              ) : (
+                <div
+                  id={item.folder === "lagops" ? "lagops-gallery" : undefined}
+                  className="work-gallery"
+                  style={{
+                    "--gallery-columns": Math.max(
+                      1,
+                      Math.min(5, item.images.length),
+                    ),
+                  }}
+                >
+                  {item.images.map((src, i) => (
+                    <button
+                      key={src}
+                      className="gallery-tile"
+                      onClick={(event) => {
+                        opener.current = event.currentTarget;
+                        setSelection({
+                          src,
+                          alt: `${item.title}, design ${i + 1}`,
+                        });
+                      }}
+                      aria-label={`Enlarge ${item.title} design ${i + 1}`}
+                    >
+                      <img
+                        src={src}
+                        alt={`${item.title}, design ${i + 1}`}
+                        loading="lazy"
+                      />
+                      <span>
+                        <Arrow diagonal />
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </article>
           ))}
         </div>

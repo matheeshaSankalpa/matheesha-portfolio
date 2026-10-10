@@ -60,6 +60,10 @@ public/work/lagops/flyer17.jpg
 
 The build-time Vite manifest discovers files recursively and sorts filenames numerically, so `flyer2` precedes `flyer10`. No JSX or image list changes are needed. A development add/remove triggers a reload. Production additions need a fresh build and deployment.
 
+For Lagops Digital videos, put MP4 files in `public/work/lagops/`, for example `video1.mp4`, `video2.mp4` and `video3.mp4`. They are discovered and sorted automatically, with no code changes. Lagops opens with flyers; its Video/Flyers button switches the same gallery area between the two. Videos have larger responsive players with sound, playback and fullscreen controls. Switching back to flyers stops playback. University club galleries keep their existing image-only layout. New production videos need a fresh build and deployment.
+
+Export future videos as H.264 video with AAC audio for browser playback. The supplied `video1.mp4` uses HEVC, so `video1.web.mp4` is an H.264/AAC copy for the gallery; the original is preserved. Optional `<name>.web.mp4` copies are preferred automatically and do not create duplicate gallery entries.
+
 Project title, role, period, description, tags, category and folder are centralized in `workItems` inside `src/data/portfolio.js`. To add a new project, add one metadata record and its matching `public/work/<folder>/` images. Gallery markup and filters are derived automatically. Existing public URLs are preserved instead of moving the artwork into `src`.
 
 ### Video previews and tool sources

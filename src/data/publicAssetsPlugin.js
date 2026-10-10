@@ -1,8 +1,8 @@
 import { existsSync, readdirSync } from "node:fs";
 import { join, relative } from "node:path";
 
-// Public images stay at their original URLs. Only filenames are bundled.
-// New gallery images are still discovered automatically.
+// Public media stay at their original URLs. Only filenames are bundled.
+// New gallery images and Lagops videos are discovered automatically.
 export default function publicAssetsPlugin() {
   const virtualId = "virtual:portfolio-assets";
   const resolvedId = "\0" + virtualId;
@@ -12,13 +12,13 @@ export default function publicAssetsPlugin() {
     sensitivity: "base",
   });
 
-  function collect(folder) {
+  function collect(folder, extensions = /\.(jpe?g|png|webp|avif)$/i) {
     const files = [];
     function walk(directory) {
       for (const entry of readdirSync(directory, { withFileTypes: true })) {
         const path = join(directory, entry.name);
         if (entry.isDirectory()) walk(path);
-        else if (/\.(jpe?g|png|webp|avif)$/i.test(entry.name)) {
+        else if (extensions.test(entry.name)) {
           files.push(
             "/" + relative(publicDirectory, path).replaceAll("\\", "/"),
           );
@@ -28,6 +28,18 @@ export default function publicAssetsPlugin() {
     const directory = join(publicDirectory, folder);
     if (existsSync(directory)) walk(directory);
     return files.sort(naturalOrder.compare);
+  }
+
+  function collectWorkVideos() {
+    const files = collect("work/lagops", /\.mp4$/i);
+    // Optional H.264 copies replace their originals in the gallery, so a
+    // browser-compatible export never appears as a duplicate video.
+    return files
+      .filter((path) => !/\.web\.mp4$/i.test(path))
+      .map((path) => {
+        const compatible = path.replace(/\.mp4$/i, ".web.mp4");
+        return files.includes(compatible) ? compatible : path;
+      });
   }
 
   return {
@@ -43,6 +55,9 @@ export default function publicAssetsPlugin() {
       return (
         "export const workImages = " +
         JSON.stringify(collect("work")) +
+        ";\n" +
+        "export const workVideos = " +
+        JSON.stringify(collectWorkVideos()) +
         ";\n" +
         "export const illustrationImages = " +
         JSON.stringify(collect("illustrations")) +
