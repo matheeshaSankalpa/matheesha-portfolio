@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { workProjects, workCategories } from "../data/work";
 import { Arrow, ContactCTA, PageHeading, SectionLabel, ToolTags } from "./ui";
+import VideoCarousel from "./VideoCarousel";
 function imagesFor(folder) {
   return (
     workProjects.find((project) => project.folder === folder)?.images || []
@@ -162,41 +163,43 @@ export default function Work() {
                   aria-label="Lagops Digital videos"
                 >
                   {item.videos.length ? (
-                    item.videos.map((src, i) => (
-                      <figure className="work-video-tile" key={src}>
-                        <video
-                          src={src}
-                          controls
-                          playsInline
-                          preload="metadata"
-                          aria-label={`${item.title}, video ${i + 1}`}
-                          onLoadedMetadata={(event) => {
-                            const video = event.currentTarget;
-                            if (video.videoWidth && video.videoHeight) {
-                              video.parentElement.style.setProperty(
-                                "--video-aspect",
-                                video.videoWidth / video.videoHeight,
-                              );
-                            }
-                          }}
-                          onPlay={(event) => {
-                            event.currentTarget
-                              .closest(".work-video-gallery")
-                              .querySelectorAll("video")
-                              .forEach((video) => {
-                                if (video !== event.currentTarget)
-                                  video.pause();
-                              });
-                          }}
-                        >
-                          Your browser does not support video playback.
-                          <a href={src}>Download video {i + 1}</a>
-                        </video>
-                        <figcaption>
-                          Video {String(i + 1).padStart(2, "0")}
-                        </figcaption>
-                      </figure>
-                    ))
+                    <VideoCarousel>
+                      {item.videos.map((src, i) => (
+                        <figure className="work-video-tile" key={src}>
+                          <video
+                            src={src}
+                            controls
+                            playsInline
+                            preload="metadata"
+                            aria-label={`${item.title}, video ${i + 1}`}
+                            onLoadedMetadata={(event) => {
+                              const video = event.currentTarget;
+                              if (video.videoWidth && video.videoHeight) {
+                                video.parentElement.style.setProperty(
+                                  "--video-aspect",
+                                  video.videoWidth / video.videoHeight,
+                                );
+                              }
+                            }}
+                            onPlay={(event) => {
+                              event.currentTarget
+                                .closest(".work-video-gallery")
+                                .querySelectorAll("video")
+                                .forEach((video) => {
+                                  if (video !== event.currentTarget)
+                                    video.pause();
+                                });
+                            }}
+                          >
+                            Your browser does not support video playback.
+                            <a href={src}>Download video {i + 1}</a>
+                          </video>
+                          <figcaption>
+                            Video {String(i + 1).padStart(2, "0")}
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </VideoCarousel>
                   ) : (
                     <p className="muted">Videos coming soon.</p>
                   )}

@@ -1,0 +1,200 @@
+.work-video-gallery .work-video-carousel {
+  --reel-height: min(440px, 58svh);
+  --reel-width: calc(var(--reel-height) * 0.5625 + 18px);
+  --card-step: calc(var(--reel-width) * 0.76);
+  width: 100%;
+  min-width: 0;
+  isolation: isolate;
+}
+
+.work-video-carousel .work-video-viewport {
+  /* Clip without a scroll container: focusing a side card must not shift it. */
+  overflow: clip;
+  border-radius: 24px;
+  background: radial-gradient(
+    ellipse at 50% 55%,
+    var(--blue-soft),
+    transparent 72%
+  );
+}
+
+.work-video-carousel .work-video-stage {
+  position: relative;
+  height: calc(var(--reel-height) + 88px);
+  perspective: 1100px;
+  perspective-origin: 50% 43%;
+  touch-action: pan-y pinch-zoom;
+  cursor: grab;
+}
+
+.work-video-carousel .work-video-stage.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.work-video-carousel .work-video-slide {
+  position: absolute;
+  top: 18px;
+  left: calc(50% - var(--reel-width) / 2);
+  width: var(--reel-width);
+  transform-origin: 50% 50%;
+  transform: translate3d(
+      calc(var(--offset) * var(--card-step) + var(--drag-shift, 0px)),
+      calc(var(--distance) * 12px),
+      calc(var(--distance) * -110px)
+    )
+    rotateY(var(--turn)) scale(var(--scale));
+  opacity: calc(1 - var(--distance) * 0.18);
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 450ms ease;
+}
+
+.work-video-carousel .work-video-slide[data-hidden="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.work-video-carousel .is-dragging .work-video-slide {
+  transition: none;
+}
+
+.work-video-carousel .work-video-tile {
+  --video-height: var(--reel-height);
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 12px 26px rgb(0 0 0 / 12%);
+}
+
+.work-video-carousel .work-video-slide[data-active="true"] .work-video-tile {
+  border-color: var(--primary);
+  box-shadow:
+    0 16px 30px rgb(0 0 0 / 15%),
+    0 0 0 1px var(--blue-soft);
+}
+
+.work-video-carousel .work-video-tile video {
+  height: var(--reel-height);
+  aspect-ratio: var(--video-aspect, 0.5625);
+  background: #000;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.work-video-carousel .work-video-tile figcaption {
+  padding: 12px 4px 4px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.work-video-carousel .work-video-select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  touch-action: pan-y pinch-zoom;
+}
+
+.work-video-carousel .work-video-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 8px 0 4px;
+}
+
+.work-video-carousel .work-video-navigation > button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.work-video-carousel .work-video-navigation > button:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--blue-soft);
+}
+
+.work-video-carousel .work-video-navigation > button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.work-video-carousel .work-video-navigation svg {
+  width: 18px;
+  height: 18px;
+}
+
+.work-video-carousel .work-video-previous svg {
+  transform: rotate(180deg);
+}
+
+.work-video-carousel .work-video-position {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--text);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.work-video-carousel .work-video-total {
+  color: var(--text-muted);
+}
+
+.work-video-carousel .work-video-progress {
+  width: 56px;
+  height: 2px;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.work-video-carousel .work-video-progress > span {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  transition: width 450ms ease;
+}
+
+.work-video-carousel .work-video-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .work-video-gallery .work-video-carousel {
+    --reel-height: min(105vw, 48svh, 390px);
+    --card-step: calc(var(--reel-width) * 0.72);
+  }
+
+  .work-video-carousel .work-video-stage {
+    perspective: 850px;
+  }
+
+  .work-video-carousel .work-video-navigation {
+    gap: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-video-carousel .work-video-slide,
+  .work-video-carousel .work-video-progress > span,
+  .work-video-carousel .work-video-navigation > button {
+    transition: none;
+  }
+}
