@@ -1,5 +1,10 @@
-import { workImages, workVideos } from "virtual:portfolio-assets";
+import {
+  workImages,
+  workVideos,
+  workVideoPosters,
+} from "virtual:portfolio-assets";
 import { workItems } from "./portfolio";
+export { workVideoPosters };
 
 // The Vite manifest supplies naturally sorted files at build time. Metadata
 // stays in portfolio.js; adding artwork requires no component changes.

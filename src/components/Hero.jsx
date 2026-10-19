@@ -39,18 +39,28 @@ export default function Hero() {
             <i>curious.</i>
           </span>
           <div className="profile-images">
-            <img
-              className="profile-light"
-              src="/profile2.png"
-              alt={`${personal.name} wearing a blue hoodie`}
-              fetchPriority="high"
-            />
-            <img
-              className="profile-dark"
-              src="/profile.png"
-              alt={`${personal.name} wearing a black hoodie`}
-              fetchPriority="high"
-            />
+            <picture>
+              <source srcSet="/profile2.webp" type="image/webp" />
+              <img
+                className="profile-light"
+                src="/profile2.png"
+                alt={`${personal.name} wearing a blue hoodie`}
+                fetchPriority="high"
+                width="1080"
+                height="1080"
+              />
+            </picture>
+            <picture>
+              <source srcSet="/profile.webp" type="image/webp" />
+              <img
+                className="profile-dark"
+                src="/profile.png"
+                alt={`${personal.name} wearing a black hoodie`}
+                fetchPriority="high"
+                width="1080"
+                height="1080"
+              />
+            </picture>
           </div>
           <div className="portrait-caption">
             <span>MATHEESHA SANKALPA</span>

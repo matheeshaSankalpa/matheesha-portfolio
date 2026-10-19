@@ -48,6 +48,14 @@ const activeNumber = (page) =>
     .locator('.work-video-slide[data-active="true"]')
     .getAttribute("aria-label");
 async function openVideos(page) {
+  if (["127.0.0.1", "localhost"].includes(new URL(base).hostname))
+    await page.route("**/_vercel/insights/script.js", (route) =>
+      route.fulfill({ contentType: "application/javascript", body: "" }),
+    );
+  if (["127.0.0.1", "localhost"].includes(new URL(base).hostname))
+    await page.route("**/v1/script.debug.js", (route) =>
+      route.fulfill({ contentType: "application/javascript", body: "" }),
+    );
   page.on("pageerror", (error) => errors.push(error.message));
   page.on("console", (message) => {
     if (message.type() === "error") errors.push(message.text());
@@ -333,7 +341,9 @@ try {
     "PASS: real unmuted playback, retained video identity and playback across navigation, single-player enforcement, stop on gallery switch, mouse drag, touch swipe/cancel, vertical gestures and landscape bounds.",
   );
 
-  for (const count of [0, 1, 2, 26]) {
+  // Manifest substitution is a development-server check; the production
+  // bundle is immutable and is exercised above with the real media.
+  for (const count of process.argv.includes("--built") ? [] : [0, 1, 2, 26]) {
     for (const width of [1440, 390]) {
       const page = await browser.newPage({
         viewport: { width, height: 1000 },
@@ -387,7 +397,9 @@ try {
   }
   assert.deepEqual(errors, []);
   console.log(
-    "PASS: zero, one, two and 26 videos; future filename discovery, natural ordering and compatible-copy preference; no browser console errors.",
+    process.argv.includes("--built")
+      ? "PASS: production carousel, future filename discovery, natural ordering and compatible-copy preference; no browser console errors. Development manifest substitution skipped for the immutable build."
+      : "PASS: zero, one, two and 26 videos; future filename discovery, natural ordering and compatible-copy preference; no browser console errors.",
   );
   for (const note of codecNotes) console.log(`EXISTING MEDIA NOTE: ${note}`);
 } finally {

@@ -59,6 +59,20 @@ export default function publicAssetsPlugin() {
         "export const workVideos = " +
         JSON.stringify(collectWorkVideos()) +
         ";\n" +
+        "export const workVideoPosters = " +
+        JSON.stringify(
+          Object.fromEntries(
+            collectWorkVideos().flatMap((video) => {
+              const poster = video
+                .replace(/^\/work\//, "/videos/")
+                .replace(/(?:\.web)?\.mp4$/i, ".jpg");
+              return existsSync(join(publicDirectory, poster.slice(1)))
+                ? [[video, poster]]
+                : [];
+            }),
+          ),
+        ) +
+        ";\n" +
         "export const illustrationImages = " +
         JSON.stringify(collect("illustrations")) +
         ";"

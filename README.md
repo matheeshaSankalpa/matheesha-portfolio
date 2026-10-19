@@ -29,6 +29,8 @@ npm.cmd run preview
 
 Theme choice is saved under `portfolio-theme` in localStorage. The first visit follows the system preference. The hero crossfades between `profile2.png` in light mode and `profile.png` in dark mode. Storage restrictions do not prevent switching themes.
 
+The hero now prefers transparent WebP copies (`profile2.webp`, 98 KB, and `profile.webp`, 80 KB) through `<picture>`, keeping both original PNGs as fallbacks. The original PNGs total about 2.5 MB and took up to 33 seconds to decode in a fresh production browser during investigation; no path or filename-casing fault was reproduced.
+
 Existing routes: `/`, `/skills`, `/timeline`, `/work`, `/videos`, `/blogs`, `/contact`. The additional `/education` alias opens the same Education page.
 
 Gallery and illustration files are discovered automatically by a small Vite plugin. Public assets retain their original URLs and are copied once. Adding or removing an image updates the development preview.
@@ -64,6 +66,18 @@ For Lagops Digital videos, put MP4 files in `public/work/lagops/`, for example `
 
 Export future videos as H.264 video with AAC audio for browser playback. The supplied `video1.mp4` uses HEVC, so `video1.web.mp4` is an H.264/AAC copy for the gallery; the original is preserved. Optional `<name>.web.mp4` copies are preferred automatically and do not create duplicate gallery entries.
 
+The Work page retains its perspective carousel, buttons, keyboard controls, drag/swipe navigation and original player behavior. Frame posters are discovered from `public/videos/lagops/<video-name>.jpg`; they stay outside the artwork folders so they do not become gallery designs. Missing optional posters are omitted from the video element. The six existing videos have real posters. `/videos` keeps its four original YouTube cards and local posters.
+
+## Vercel Analytics and deployment
+
+`@vercel/analytics/react` is mounted exactly once in `src/main.jsx`. Vite selects development/production mode explicitly. The Vercel script tracks the initial page, React Router history navigation and browser back/forward automatically; no second injector or manual page-view handler is installed.
+
+Enable Web Analytics for the existing portfolio project in the Vercel dashboard, then deploy. The SPA rewrite excludes `/_vercel/*` and file requests so tracking endpoints cannot receive `index.html`. A local Vite preview has no Vercel collector; local browser tests stub that infrastructure, and `qa/production.mjs` separately tests the official Vercel script with an intercepted collector. Production verification must use the real endpoints.
+
+Every build emits `/build-info.json` with `VERCEL_GIT_COMMIT_SHA`, falling back to local Git HEAD. This response uses `Cache-Control: no-store` on Vercel. Match its full SHA to GitHub before declaring production synchronized. Keep the Vercel Git connection on `matheeshaSankalpa/matheesha-portfolio`, production branch `main`, framework Vite, build command `npm run build`, output `dist`.
+
+If a push produces no Vercel check/deployment, inspect the existing project's Git connection and ignored-build settings, then deploy the exact new `main` commit. If CLI access is needed, run `npx.cmd vercel login`, link to the existing portfolio project with `npx.cmd vercel link`, and use `npx.cmd vercel --prod`. Do not create a replacement project. Verify the domain's `/build-info.json` after deployment.
+
 Project title, role, period, description, tags, category and folder are centralized in `workItems` inside `src/data/portfolio.js`. To add a new project, add one metadata record and its matching `public/work/<folder>/` images. Gallery markup and filters are derived automatically. Existing public URLs are preserved instead of moving the artwork into `src`.
 
 ### Video previews and tool sources
@@ -95,6 +109,10 @@ In another terminal:
 ```powershell
 $env:QA_URL='http://127.0.0.1:4173'
 npm.cmd run qa
+node qa/video-carousel.mjs --built
+New-Item -ItemType Directory -Path .tools -Force | Out-Null
+Invoke-WebRequest 'https://va.vercel-scripts.com/v1/script.js' -OutFile .tools/vercel-insights.js
+node qa/production.mjs
 node qa/interactions.mjs
 node qa/refinements.mjs
 node qa/polish.mjs

@@ -13,6 +13,9 @@ dist-ssr
 *.local
 .npm-cache/
 qa/screenshots/
+.tools/
+.vercel/
+qa/*-verification.json
 
 # Editor directories and files
 .vscode/*

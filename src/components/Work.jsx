@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { workProjects, workCategories } from "../data/work";
+import { workProjects, workCategories, workVideoPosters } from "../data/work";
 import { Arrow, ContactCTA, PageHeading, SectionLabel, ToolTags } from "./ui";
 import VideoCarousel from "./VideoCarousel";
 function imagesFor(folder) {
@@ -168,6 +168,7 @@ export default function Work() {
                         <figure className="work-video-tile" key={src}>
                           <video
                             src={src}
+                            poster={workVideoPosters[src]}
                             controls
                             playsInline
                             preload="metadata"

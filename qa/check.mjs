@@ -88,6 +88,17 @@ try {
         reducedMotion: "reduce",
       });
       const page = await context.newPage();
+      if (
+        new URL(base).hostname === "127.0.0.1" ||
+        new URL(base).hostname === "localhost"
+      )
+        await page.route("**/_vercel/insights/script.js", (route) =>
+          route.fulfill({ contentType: "application/javascript", body: "" }),
+        );
+      if (["127.0.0.1", "localhost"].includes(new URL(base).hostname))
+        await page.route("**/v1/script.debug.js", (route) =>
+          route.fulfill({ contentType: "application/javascript", body: "" }),
+        );
       const errors = [];
       page.on("pageerror", (error) => errors.push(error.message));
       page.on("console", (message) => {
