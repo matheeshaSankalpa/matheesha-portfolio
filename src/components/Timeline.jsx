@@ -1,6 +1,7 @@
 import { academicItems, certificateItems } from "../data/portfolio";
 import { certificates } from "../data/content";
 import { Arrow, ContactCTA, PageHeading, SectionHeading } from "./ui";
+import "../styles/course-providers.css";
 const logos = [
   "/logos/ananda.png",
   "/logos/sitc.png",
@@ -85,7 +86,23 @@ export default function Timeline() {
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
                 <div className="credential-bottom">
-                  <span>{item.platform}</span>
+                  <span className="credential-provider">
+                    <span className="credential-provider-logo">
+                      <img
+                        src={item.logo}
+                        alt={`${item.platform} logo`}
+                        width="32"
+                        height="32"
+                        loading="lazy"
+                        onError={(event) => {
+                          event.currentTarget.parentElement.hidden = true;
+                        }}
+                      />
+                    </span>
+                    <span className="credential-provider-name">
+                      {item.platform}
+                    </span>
+                  </span>
                   <span>View credential ↗</span>
                 </div>
               </a>

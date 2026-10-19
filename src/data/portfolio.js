@@ -370,7 +370,7 @@ export const academicItems = [
 export const certificateItems = [
   {
     category: "AI + SEO",
-    logo: "https://www.google.com/s2/favicons?domain=skillup.online&sz=128",
+    logo: "/logos/providers/skillup.png",
     title: "AI SEO: Mastering Generative Engine Optimization (GEO)",
     platform: "SkillUp",
     link: "https://coursera.org/share/85c6d10b1609d88af77cf81486f228d7",
@@ -379,7 +379,7 @@ export const certificateItems = [
   },
   {
     category: "Digital Marketing",
-    logo: "https://www.google.com/s2/favicons?domain=digitalmarketinginstitute.com&sz=128",
+    logo: "/logos/providers/digital-marketing-institute.png",
     title: "Digital Marketing Strategy and Planning",
     platform: "Digital Marketing Institute",
     link: "https://coursera.org/share/92e0da0ee1d42b548f53e07c69df0534",
@@ -388,7 +388,7 @@ export const certificateItems = [
   },
   {
     category: "AI Marketing",
-    logo: "https://www.google.com/s2/favicons?domain=microsoft.com&sz=128",
+    logo: "/logos/providers/microsoft.png",
     title: "Generative AI for Marketers",
     platform: "Microsoft",
     link: "https://coursera.org/share/54cffe95f18142f58b38832f3d777b2a",
@@ -397,7 +397,7 @@ export const certificateItems = [
   },
   {
     category: "Operations",
-    logo: "https://www.google.com/s2/favicons?domain=london.ac.uk&sz=128",
+    logo: "/logos/providers/university-of-london.png",
     title: "Operations Systems Excellence",
     platform: "University of London",
     link: "https://coursera.org/share/6eb83a1826318c1a589816e2d1625885",
@@ -406,7 +406,7 @@ export const certificateItems = [
   },
   {
     category: "Marketing Culture",
-    logo: "https://www.google.com/s2/favicons?domain=london.ac.uk&sz=128",
+    logo: "/logos/providers/university-of-london.png",
     title: "Consumption, Marketing and Culture",
     platform: "University of London",
     link: "https://coursera.org/share/465323157955f8943d4b628182e37281",
@@ -415,9 +415,9 @@ export const certificateItems = [
   },
   {
     category: "Back-End Development",
-    logo: "https://www.google.com/s2/favicons?domain=mongodb.com&sz=128",
+    logo: "/logos/providers/ibm.png",
     title: "Node.js & MongoDB: Developing Back-end Database Applications",
-    platform: "MongoDB / Back-End Development",
+    platform: "IBM",
     link: "https://coursera.org/share/33262eaf1bfc972ff5b22c46dc7539bc",
     description:
       "Covered back-end application development using Node.js and MongoDB database concepts.",
