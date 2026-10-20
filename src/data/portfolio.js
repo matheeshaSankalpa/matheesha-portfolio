@@ -7,6 +7,15 @@ export const supportingTools = [
 ];
 
 export const blogs = [
+    {
+    category: "Marketing",
+    title:
+      "People Don't Buy Products. They Buy What They're Missing!",
+    subtitle: "මිනිස්සු ගන්නෙ Product එක නෙමෙයි, එයාලගෙ ජීවිතේ අඩුවෙලා තියෙන Need එක!මිනිස්සු ගන්නෙ Product එක නෙමෙයි, එයාලගෙ ජීවිතේ අඩුවෙලා තියෙන Need එක!",
+    image: "/blog/Marshlow.png",
+    url: "https://medium.com/@smatheesha76/people-dont-buy-products-they-buy-what-they-re-missing-06bfa1d34e69",
+  },
+
   {
     category: "Marketing",
     title:
