@@ -15,7 +15,12 @@ const script = local
 const failures = [];
 const findings = [];
 const config = JSON.parse(await readFile("vercel.json", "utf8"));
-const spaRoute = new RegExp(`^${config.rewrites[0].source}$`);
+const spaRewrite = config.rewrites.find(
+  (rule) => rule.destination === "/index.html",
+);
+const spaRoute = new RegExp(`^${spaRewrite.source}$`);
+assert.equal(config.rewrites[0].source, "/work");
+assert.equal(config.rewrites[0].destination, "/work.html");
 for (const route of ["/", "/work", "/videos", "/education", "/missing-page"])
   assert(spaRoute.test(route), `${route} must reach React Router`);
 for (const asset of [

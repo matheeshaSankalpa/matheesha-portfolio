@@ -8,6 +8,10 @@
   ],
   "rewrites": [
     {
+      "source": "/work",
+      "destination": "/work.html"
+    },
+    {
       "source": "/((?!_vercel(?:/|$)|assets(?:/|$)|.*\\.[^/]+$).*)",
       "destination": "/index.html"
     }
