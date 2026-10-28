@@ -1,7 +1,7 @@
-import { academicItems, certificateItems } from "../data/portfolio";
+import { academicItems } from "../data/portfolio";
 import { certificates } from "../data/content";
 import { Arrow, ContactCTA, PageHeading, SectionHeading } from "./ui";
-import "../styles/course-providers.css";
+import CertificateCarousel from "./CertificateCarousel";
 const logos = [
   "/logos/ananda.png",
   "/logos/sitc.png",
@@ -69,45 +69,7 @@ export default function Timeline() {
             }
             description="Credentials in marketing, AI, operations and development."
           />
-          <div className="credential-grid">
-            {certificateItems.map((item, i) => (
-              <a
-                className="credential-card"
-                href={item.link}
-                target="_blank"
-                rel="noreferrer"
-                key={item.link}
-              >
-                <div className="credential-top">
-                  <span>{item.category}</span>
-                  <Arrow diagonal />
-                </div>
-                <span className="credential-number">0{i + 1}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <div className="credential-bottom">
-                  <span className="credential-provider">
-                    <span className="credential-provider-logo">
-                      <img
-                        src={item.logo}
-                        alt={`${item.platform} logo`}
-                        width="32"
-                        height="32"
-                        loading="lazy"
-                        onError={(event) => {
-                          event.currentTarget.parentElement.hidden = true;
-                        }}
-                      />
-                    </span>
-                    <span className="credential-provider-name">
-                      {item.platform}
-                    </span>
-                  </span>
-                  <span>View credential ↗</span>
-                </div>
-              </a>
-            ))}
-          </div>
+          <CertificateCarousel />
           <div className="additional-credentials">
             <h3>Development certificates</h3>
             {certificates.map((item) => (

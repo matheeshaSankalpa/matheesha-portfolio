@@ -383,6 +383,9 @@ export const certificateItems = [
     title: "AI SEO: Mastering Generative Engine Optimization (GEO)",
     platform: "SkillUp",
     link: "https://coursera.org/share/85c6d10b1609d88af77cf81486f228d7",
+    image: "/certificates/ai-seo-mastering-generative-engine-optimization.jpg",
+    completedOn: "2026-05-17",
+    skills: ["Generative Engine Optimization (GEO)", "Content Strategy", "SEO"],
     description:
       "Focused on Generative Engine Optimization and how AI-powered search changes digital visibility.",
   },
@@ -392,6 +395,9 @@ export const certificateItems = [
     title: "Digital Marketing Strategy and Planning",
     platform: "Digital Marketing Institute",
     link: "https://coursera.org/share/92e0da0ee1d42b548f53e07c69df0534",
+    image: "/certificates/digital-marketing-strategy-and-planning.jpg",
+    completedOn: "2025-04-19",
+    skills: ["Digital Strategy", "Channel Planning", "E-commerce"],
     description:
       "Covered digital marketing planning, strategic thinking, and campaign direction.",
   },
@@ -400,7 +406,12 @@ export const certificateItems = [
     logo: "/logos/providers/microsoft.png",
     title: "Generative AI for Marketers",
     platform: "Microsoft",
-    link: "https://coursera.org/share/54cffe95f18142f58b38832f3d777b2a",
+    link: "https://coursera.org/share/44732493191435d6501462215424123c",
+    alternateLink:
+      "https://coursera.org/share/54cffe95f18142f58b38832f3d777b2a",
+    image: "/certificates/generative-ai-for-marketers.jpg",
+    completedOn: "2026-01-03",
+    skills: ["Microsoft Copilot", "Prompt Engineering", "Customer Insights"],
     description:
       "Explored how generative AI can support marketers with content, customer insights, and creative workflows.",
   },
@@ -410,6 +421,13 @@ export const certificateItems = [
     title: "Operations Systems Excellence",
     platform: "University of London",
     link: "https://coursera.org/share/6eb83a1826318c1a589816e2d1625885",
+    image: "/certificates/operations-systems-excellence.jpg",
+    completedOn: "2025-06-20",
+    skills: [
+      "Operations Management",
+      "Process Design",
+      "Operational Efficiency",
+    ],
     description:
       "Learned about operations systems, process thinking, and improving organizational performance.",
   },
@@ -419,6 +437,9 @@ export const certificateItems = [
     title: "Consumption, Marketing and Culture",
     platform: "University of London",
     link: "https://coursera.org/share/465323157955f8943d4b628182e37281",
+    image: "/certificates/consumption-marketing-and-culture.jpg",
+    completedOn: "2025-07-03",
+    skills: ["Consumer Culture", "Consumer Behaviour", "Marketing"],
     description:
       "Explored the relationship between consumer behavior, culture, and marketing communication.",
   },
@@ -428,8 +449,60 @@ export const certificateItems = [
     title: "Node.js & MongoDB: Developing Back-end Database Applications",
     platform: "IBM",
     link: "https://coursera.org/share/33262eaf1bfc972ff5b22c46dc7539bc",
+    image:
+      "/certificates/nodejs-mongodb-developing-back-end-database-applications.jpg",
+    completedOn: "2025-10-08",
+    skills: ["Node.js", "MongoDB", "REST APIs"],
     description:
       "Covered back-end application development using Node.js and MongoDB database concepts.",
+  },
+  {
+    category: "Business + Marketing",
+    logo: "/logos/providers/university-of-london.png",
+    title: "Business and Marketing Strategies",
+    platform: "University of London",
+    link: "https://coursera.org/share/d6ee5abfe4b421ae76a2a4bede91354a",
+    image: "/certificates/business-and-marketing-strategies.jpg",
+    completedOn: "2025-07-03",
+    description:
+      "Developed an understanding of international business, operations strategy and the cultural forces that shape consumer behaviour.",
+    skills: ["Marketing Strategy", "International Business", "Process Design"],
+  },
+  {
+    category: "UX Design",
+    logo: "/certificates/logos/google.png",
+    title: "Google UX Design",
+    platform: "Google",
+    link: "https://coursera.org/share/6367b2aa1f36843c9b4028ef4c57ef1a",
+    image: "/certificates/google-ux-design.jpg",
+    completedOn: "2024-11-15",
+    description:
+      "Completed seven practice-based courses covering the UX design process, from understanding users to prototyping and testing solutions.",
+    skills: ["User Research", "Wireframing", "Prototyping"],
+  },
+  {
+    category: "Full-Stack Development",
+    logo: "/logos/providers/ibm.png",
+    title: "JavaScript Programming with React, Node & MongoDB",
+    platform: "IBM",
+    link: "https://coursera.org/share/66578f1d3fb43aa5ab5620c6b8c4b262",
+    image: "/certificates/javascript-programming-with-react-node-mongodb.jpg",
+    completedOn: "2025-10-08",
+    description:
+      "Built interactive React interfaces and Node.js applications, connecting REST APIs and asynchronous JavaScript with MongoDB databases.",
+    skills: ["React", "Node.js", "MongoDB", "REST APIs"],
+  },
+  {
+    category: "Front-End Development",
+    logo: "/certificates/logos/scrimba.png",
+    title: "Tailwind CSS",
+    platform: "Scrimba",
+    link: "https://coursera.org/share/bc3bb4d5eb962bca510fcd3cb42f3aba",
+    image: "/certificates/tailwind-css.jpg",
+    completedOn: "2025-04-10",
+    description:
+      "Applied Tailwind CSS to responsive web design, building reusable interface components and practical projects for modern web applications.",
+    skills: ["Tailwind CSS", "Responsive Web Design", "UI Components"],
   },
 ];
 
