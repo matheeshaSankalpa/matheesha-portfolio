@@ -1,27 +1,107 @@
 /* Targeted additions to the existing visual system. */
-.home-page {
+:is(.home-page, #work, #skills, #timeline, #videos, #blogs, #contact, main.page-section) {
   --grid-line: color-mix(in srgb, var(--primary) 7%, transparent);
 }
-[data-theme="dark"] .home-page {
+[data-theme="dark"] :is(.home-page, #work, #skills, #timeline, #videos, #blogs, #contact, main.page-section) {
   --grid-line: color-mix(in srgb, var(--primary) 4%, transparent);
 }
-.home-page .about-section,
-.home-page .sketchbook-section {
+:is(.home-page .hero-copy, .home-page .experience-stat, .home-page .about-section, .home-page .sketchbook-section, #work, #skills, #skills > .page-heading, #timeline, #timeline .education-item:nth-last-child(-n + 2), #videos, #videos .video-hero-copy, #blogs, #contact, main.page-section) {
   position: relative;
   isolation: isolate;
 }
-.home-page .about-section::before,
-.home-page .sketchbook-section::before {
+/* Bounded, content-attached patches reuse the original home-page grid layer. */
+:is(.home-page .hero-copy, .home-page .experience-stat, .home-page .about-section, .home-page .sketchbook-section, #work, #skills > .page-heading, #timeline, #timeline .education-item:nth-last-child(-n + 2), #videos .video-hero-copy, #blogs, #contact, main.page-section)::before,
+:is(#work, #skills, #timeline)::after {
   content: "";
   position: absolute;
-  inset: -35px 0;
+  top: 48px;
+  left: 0;
+  width: min(460px, 88%);
+  height: 320px;
   z-index: -1;
   pointer-events: none;
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 46px 46px;
-  mask-image: radial-gradient(ellipse at center, black 20%, transparent 72%);
+  background-size: 24px 24px;
+  /* Each lobe fades to zero inside the box, with an asymmetric combined edge. */
+  mask-image:
+    radial-gradient(ellipse 34% 40% at 39% 46%, black, transparent),
+    radial-gradient(ellipse 27% 32% at 66% 59%, rgb(0 0 0 / 70%), transparent),
+    radial-gradient(ellipse 21% 27% at 58% 28%, rgb(0 0 0 / 45%), transparent);
+}
+.home-page .sketchbook-section::before {
+  top: 24%;
+  left: auto;
+  right: 0;
+}
+.home-page .hero-copy::before {
+  top: 100px;
+  height: 360px;
+}
+:is(#work, #blogs, #contact)::before {
+  left: auto;
+  right: 0;
+}
+#skills > .page-heading::before {
+  top: 24px;
+}
+#timeline::before {
+  top: 32px;
+  left: auto;
+  right: 8%;
+}
+#timeline .education-item:nth-last-child(-n + 2)::before {
+  top: 0;
+  height: 100%;
+  max-height: 320px;
+}
+#videos .video-hero-copy::before {
+  top: 24px;
+}
+#contact::before {
+  top: 80px;
+}
+#work::after {
+  top: 62%;
+  width: min(400px, 80%);
+}
+#skills::after {
+  top: auto;
+  bottom: 65px;
+  left: auto;
+  right: 12%;
+}
+#timeline::after {
+  top: auto;
+  bottom: 210px;
+}
+@media (max-width: 700px) {
+  :is(.home-page .hero-copy, .home-page .experience-stat, .home-page .about-section, .home-page .sketchbook-section, #work, #skills > .page-heading, #timeline, #timeline .education-item:nth-last-child(-n + 2), #videos .video-hero-copy, #blogs, #contact, main.page-section)::before,
+  :is(#work, #skills, #timeline)::after {
+    width: min(280px, 88%);
+    height: 240px;
+    background-size: 20px 20px;
+    opacity: 0.85;
+  }
+}
+/* Six pixels of scroll-linked drift; unsupported/reduced-motion views stay static. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    :is(.home-page .hero-copy, .home-page .experience-stat, .home-page .about-section, .home-page .sketchbook-section, #work, #skills > .page-heading, #timeline, #timeline .education-item:nth-last-child(-n + 2), #videos .video-hero-copy, #blogs, #contact, main.page-section)::before,
+    :is(#work, #skills, #timeline)::after {
+      animation: localized-grid-drift 1s linear both;
+      animation-timeline: view();
+    }
+  }
+}
+@keyframes localized-grid-drift {
+  from {
+    transform: translateY(3px);
+  }
+  to {
+    transform: translateY(-3px);
+  }
 }
 .about-portrait {
   margin-top: 26px;
